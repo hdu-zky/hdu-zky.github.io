@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git的基本命令</title>
+    <url>/2019/11/26/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>本文主要讲解一些git的基本操作语句的使用</p>
+<h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git init                <span class="comment">#初始化仓库</span></span><br><span class="line">$ git add readme.md       <span class="comment">#添加文件</span></span><br><span class="line">$ git status              <span class="comment">#查看文件状态（是否更改）</span></span><br><span class="line">$ git add .               <span class="comment">#把所有要提交的修改放到暂存区</span></span><br><span class="line">$ git commit -a -m <span class="string">"注释"</span> <span class="comment">#给所有变更的文件添加注释</span></span><br></pre></td></tr></table></figure>
+<p>推送分支:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git push origin master  <span class="comment">#本地同步到远程仓库</span></span><br></pre></td></tr></table></figure>
+<p>远程分支同步到本地:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git pull origin master  <span class="comment">#远程仓库同步到本地</span></span><br></pre></td></tr></table></figure>
+<h4 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h4><p>查看当前分支:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+<p>创建dev分支，然后切换到dev分支:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout -b dev</span><br></pre></td></tr></table></figure>
+<p>git checkout命令加上-b参数表示创建并切换，相当于以下两条命令:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch dev          <span class="comment"># 创建分支</span></span><br><span class="line">$ git checkout dev        <span class="comment"># 切换分支</span></span><br></pre></td></tr></table></figure>
+<p>合并分支,git merge命令用于合并指定分支到当前分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git merge dev</span><br></pre></td></tr></table></figure>
+<p>删除分支:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch -d dev</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2019/11/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
