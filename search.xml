@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo配置404界面</title>
+    <url>/2019/11/26/hexo%E9%85%8D%E7%BD%AE404%E7%95%8C%E9%9D%A2/</url>
+    <content><![CDATA[<p>本文主要讲解hexo下的404界面配置<br>如果将404.html直接放在根目录的source文件夹下，在编译的时候会改变文本内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo\<span class="built_in">source</span>\404.html</span><br></pre></td></tr></table></figure>
+<p>所以改为放在你配置的主题文件夹下的source文件夹内</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo\themes\next\<span class="built_in">source</span>\404.html</span><br></pre></td></tr></table></figure>
+<p>在编译的时候会直接生成到public下,可以保持原本的内容</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo404界面</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git的基本命令</title>
     <url>/2019/11/26/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>本文主要讲解一些git的基本操作语句的使用</p>
