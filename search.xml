@@ -19,8 +19,11 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git merge dev</span><br></pre></td></tr></table></figure>
 <p>删除分支:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch -d dev</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
       <tags>
-        <tag>git</tag>
+        <tag>git bash基本命令</tag>
       </tags>
   </entry>
   <entry>
