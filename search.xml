@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2019-11-27-hexo-blog-add-image</title>
+    <url>/2019/11/27/2019-11-27-hexo-blog-add-image/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>2019-11-27-valine-410-post-error</title>
+    <url>/2019/11/27/2019-11-27-valine-410-post-error/</url>
+    <content><![CDATA[<p>hexo下的next主题安装的valine评论系统报以下错误：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Code : undefined [410 POST https://avoscloud.com/1.1/classes/Comment]`</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>一开始他是这样的<br><img src="/2019/11/27/2019-11-27-valine-410-post-error/error410.png" alt="410错误"><br>然后我再网上百度了一些解答，<a href="https://laytonsun.com/learning/2019-08/enable-comments.html" target="_blank" rel="noopener">有说是leancloud地区问题</a>的，<a href="https://www.jianshu.com/p/f4658df66a15" target="_blank" rel="noopener">也有说是版本之间一些参数的问题</a>，我检查一下我的发现都不是这些问题,</p>
+<p>然后打开 <code>/next/_config.yml</code>主题配置文件看到了代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment"># When enable is set to be true</span></span><br><span class="line">  appid: 我的appid<span class="comment"># Your leancloud application appid</span></span><br><span class="line">  appkey: 我的appkey<span class="comment"># Your leancloud application appkey</span></span><br></pre></td></tr></table></figure>
+<p>它在编辑器里是这样显示的<br><img src="/2019/11/27/2019-11-27-valine-410-post-error/config.png" alt="410错误"><br>可以看到<code>enable: true</code>中的颜色根本没有改变，于是我把#及后面的注释换行，然后就高亮显示了，在运行一下，成功。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> </span><br><span class="line">  <span class="comment"># When enable is set to be true</span></span><br><span class="line">  appid: 我的appid</span><br><span class="line">  <span class="comment"># Your leancloud application appid</span></span><br><span class="line">  appkey: 我的appkey</span><br><span class="line">  <span class="comment"># Your leancloud application appkey</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo valine410错误</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>next主题如何添加动态背景canvas_nest</title>
     <url>/2019/11/27/2019-11-27-add-background-canvas-nest/</url>
     <content><![CDATA[<p>hexo next主题下怎么添加canvas_nest背景</p>
