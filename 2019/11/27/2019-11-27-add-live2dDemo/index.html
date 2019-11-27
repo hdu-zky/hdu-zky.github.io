@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="hexo next主题下怎么添加canvas_nest背景">
-<meta name="keywords" content="hexo动态背景">
+  <meta name="description" content="hexo右下角添加2d动画模型">
+<meta name="keywords" content="hexo添加live2dDemo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="next主题如何添加动态背景canvas_nest">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019-11-27-add-background-canvas-nest.html">
+<meta property="og:title" content="hexo右下角添加2d动画模型">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;2019-11-27-add-live2dDemo&#x2F;index.html">
 <meta property="og:site_name" content="Hackett">
-<meta property="og:description" content="hexo next主题下怎么添加canvas_nest背景">
+<meta property="og:description" content="hexo右下角添加2d动画模型">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-27T09:29:53.206Z">
+<meta property="og:updated_time" content="2019-11-27T09:29:17.137Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019-11-27-add-background-canvas-nest.html">
+<link rel="canonical" href="http://yoursite.com/2019/11/27/2019-11-27-add-live2dDemo/">
 
 
 <script id="page-configurations">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>next主题如何添加动态背景canvas_nest | Hackett</title>
+  <title>hexo右下角添加2d动画模型 | Hackett</title>
   
 
 
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019-11-27-add-background-canvas-nest.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/27/2019-11-27-add-live2dDemo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/user.jpeg">
@@ -219,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          next主题如何添加动态背景canvas_nest
+          hexo右下角添加2d动画模型
         </h1>
 
         <div class="post-meta">
@@ -230,7 +230,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-27 14:20:06 / 修改时间：17:29:53" itemprop="dateCreated datePublished" datetime="2019-11-27T14:20:06+08:00">2019-11-27</time>
+              <time title="创建时间：2019-11-27 09:51:55 / 修改时间：17:29:17" itemprop="dateCreated datePublished" datetime="2019-11-27T09:51:55+08:00">2019-11-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,8 +260,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019-11-27-add-background-canvas-nest.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019-11-27-add-background-canvas-nest.html" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/27/2019-11-27-add-live2dDemo/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/2019-11-27-add-live2dDemo/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -276,14 +276,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>hexo next主题下怎么添加canvas_nest背景</p>
+        <p>hexo右下角添加2d动画模型</p>
 <a id="more"></a>
-<p>我的hexo next是V7.5.0版本</p>
 <ol>
-<li>修改主题配置文件<br>打开 <code>/next/_config.yml</code>，<code>Ctrl+f</code>找到<code>Canvas-nest</code>，将<code>enable</code>改为<code>true</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Canvas-nest</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/hustcc/canvas-nest.js</span></span><br><span class="line">canvas_nest:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-接下来有两种方法：<br>方法一：修改布局文件<br>打开 <code>next/layout/_layout.swig</code>，在<code>&lt;body&gt;&lt;/body&gt;</code>标签内添加以下代码<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.canvas_nest %&#125;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span></span><br><span class="line"> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-方法二：下载插件<code>canvas-nest</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-nest</span><br><span class="line">themes/next-v7.5.0/<span class="built_in">source</span>/lib/canvas-nest</span><br></pre></td></tr></table></figure>
-然后运行以下代码重新构建<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></li>
+<li>安装插件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure></li>
+<li>选择你喜欢的模型名字<br>在GitHub上<a href="https://github.com/summerscar/live2dDemo" target="_blank" rel="noopener">live2dDemo</a>有很多，可以选择里面的模型</li>
+<li>将以下代码添加到主题配置文件_config.yml末尾，修改&lt;你喜欢的模型名字&gt;（如：z16）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span></span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span></span><br><span class="line">  <span class="built_in">log</span>: <span class="literal">false</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li>建配置文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在站点目录下建文件夹live2d_models，</span><br><span class="line">再在live2d_models下建文件夹&lt;你喜欢的模型名字&gt;,</span><br><span class="line">再在&lt;你喜欢的模型名字&gt;下建json文件：&lt;你喜欢的模型名字&gt;.model.json</span><br></pre></td></tr></table></figure></li>
+<li>安装模型<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br></pre></td></tr></table></figure></li>
+<li>运行以下命令， 在<code>http://localhost:4000/</code>查看测试结果<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>
@@ -295,7 +296,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/hexo%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/" rel="tag"><i class="fa fa-tag"></i> hexo动态背景</a>
+              <a href="/tags/hexo%E6%B7%BB%E5%8A%A0live2dDemo/" rel="tag"><i class="fa fa-tag"></i> hexo添加live2dDemo</a>
           </div>
 
         
@@ -304,12 +305,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019-11-27-add-live2dDemo.html" rel="prev" title="hexo右下角添加2d动画模型">
-      <i class="fa fa-chevron-left"></i> hexo右下角添加2d动画模型
+    <a href="/2019/11/27/2019-11-27-hexo-no-password/" rel="prev" title="git bash每次运行hexo d都要输入密码的解决办法">
+      <i class="fa fa-chevron-left"></i> git bash每次运行hexo d都要输入密码的解决办法
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019-11-27-valine-410-post-error.html" rel="next" title="hexo下valine评论系统报410错">
-      hexo下valine评论系统报410错 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/11/27/2019-11-27-add-background-canvas-nest/" rel="next" title="next主题如何添加动态背景canvas_nest">
+      next主题如何添加动态背景canvas_nest <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

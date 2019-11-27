@@ -46,21 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="hexo下的next主题安装的valine评论系统报以下错误：">
-<meta name="keywords" content="hexo valine410错误">
+  <meta name="description" content="修改文章tag标签的样式及文章底部添加本文结束标志">
+<meta name="keywords" content="hexo tag样式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo下valine评论系统报410错">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019-11-27-valine-410-post-error.html">
+<meta property="og:title" content="修改文章tag标签的样式">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;2019-11-27-hexo-change-tag-style&#x2F;index.html">
 <meta property="og:site_name" content="Hackett">
-<meta property="og:description" content="hexo下的next主题安装的valine评论系统报以下错误：">
+<meta property="og:description" content="修改文章tag标签的样式及文章底部添加本文结束标志">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019-11-27-valine-410-post-error.htm&#x2F;error410.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019-11-27-valine-410-post-error.htm&#x2F;config.png">
-<meta property="og:updated_time" content="2019-11-27T10:13:48.377Z">
+<meta property="og:updated_time" content="2019-11-27T11:01:27.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019-11-27-valine-410-post-error.htm&#x2F;error410.png">
 
-<link rel="canonical" href="http://yoursite.com/2019-11-27-valine-410-post-error.html">
+<link rel="canonical" href="http://yoursite.com/2019/11/27/2019-11-27-hexo-change-tag-style/">
 
 
 <script id="page-configurations">
@@ -74,7 +71,7 @@
   };
 </script>
 
-  <title>hexo下valine评论系统报410错 | Hackett</title>
+  <title>修改文章tag标签的样式 | Hackett</title>
   
 
 
@@ -209,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019-11-27-valine-410-post-error.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/27/2019-11-27-hexo-change-tag-style/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/user.jpeg">
@@ -222,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo下valine评论系统报410错
+          修改文章tag标签的样式
         </h1>
 
         <div class="post-meta">
@@ -233,7 +230,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-27 16:37:36 / 修改时间：18:13:48" itemprop="dateCreated datePublished" datetime="2019-11-27T16:37:36+08:00">2019-11-27</time>
+              <time title="创建时间：2019-11-27 18:51:20 / 修改时间：19:01:27" itemprop="dateCreated datePublished" datetime="2019-11-27T18:51:20+08:00">2019-11-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,8 +260,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019-11-27-valine-410-post-error.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019-11-27-valine-410-post-error.html" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/27/2019-11-27-hexo-change-tag-style/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/2019-11-27-hexo-change-tag-style/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -279,15 +276,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>hexo下的next主题安装的valine评论系统报以下错误：</p>
+        <p>修改文章tag标签的样式及文章底部添加本文结束标志</p>
 <a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Code : undefined [410 POST https://avoscloud.com/1.1/classes/Comment]`</span><br></pre></td></tr></table></figure>
-
-<p>一开始他是这样的<br><img src="/2019-11-27-valine-410-post-error.htm/error410.png" alt="410错误"><br>然后我再网上百度了一些解答，<a href="https://laytonsun.com/learning/2019-08/enable-comments.html" target="_blank" rel="noopener">有说是leancloud地区问题</a>的，<a href="https://www.jianshu.com/p/f4658df66a15" target="_blank" rel="noopener">也有说是版本之间一些参数的问题</a>，我检查一下我的发现都不是这些问题,</p>
-<p>然后打开 <code>/next/_config.yml</code>主题配置文件看到了代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment"># When enable is set to be true</span></span><br><span class="line">  appid: 我的appid<span class="comment"># Your leancloud application appid</span></span><br><span class="line">  appkey: 我的appkey<span class="comment"># Your leancloud application appkey</span></span><br></pre></td></tr></table></figure>
-<p>它在编辑器里是这样显示的<br><img src="/2019-11-27-valine-410-post-error.htm/config.png" alt="410错误"><br>可以看到<code>enable: true</code>中的颜色根本没有改变，于是我把#及后面的注释换行，然后就高亮显示了，在运行一下，成功。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> </span><br><span class="line">  <span class="comment"># When enable is set to be true</span></span><br><span class="line">  appid: 我的appid</span><br><span class="line">  <span class="comment"># Your leancloud application appid</span></span><br><span class="line">  appkey: 我的appkey</span><br><span class="line">  <span class="comment"># Your leancloud application appkey</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改tag样式"><a href="#修改tag样式" class="headerlink" title="修改tag样式"></a>修改tag样式</h3><p>打开<code>next/_config.yml</code>文件，查找<code>tag_icon: false</code>改为true即可</p>
+<h3 id="添加结束标志"><a href="#添加结束标志" class="headerlink" title="添加结束标志"></a>添加结束标志</h3><p>打开编辑<code>themes\next\layout\_macro\post.swig</code>，在文章结束的地方添加如下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">    &lt;div style=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span><br><span class="line">        ---------本文已结束---------</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -297,7 +290,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/hexo-valine410%E9%94%99%E8%AF%AF/" rel="tag"><i class="fa fa-tag"></i> hexo valine410错误</a>
+              <a href="/tags/hexo-tag%E6%A0%B7%E5%BC%8F/" rel="tag"><i class="fa fa-tag"></i> hexo tag样式</a>
           </div>
 
         
@@ -306,13 +299,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019-11-27-add-background-canvas-nest.html" rel="prev" title="next主题如何添加动态背景canvas_nest">
-      <i class="fa fa-chevron-left"></i> next主题如何添加动态背景canvas_nest
+    <a href="/2019/11/27/2019-11-27-hexo-blog-add-image/" rel="prev" title="hexo生成博文插入图片">
+      <i class="fa fa-chevron-left"></i> hexo生成博文插入图片
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019-11-27-hexo-blog-add-image.html" rel="next" title="hexo生成博文插入图片">
-      hexo生成博文插入图片 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -351,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改tag样式"><span class="nav-number">1.</span> <span class="nav-text">修改tag样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加结束标志"><span class="nav-number">2.</span> <span class="nav-text">添加结束标志</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
