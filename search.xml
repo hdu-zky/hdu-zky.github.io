@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo+next使用Valine评论系统</title>
+    <url>/2019/11/27/2019-11-27-hexo-add-valine/</url>
+    <content><![CDATA[<a id="more"></a>
+<p>hexo+next使用Valine评论系统</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo valine</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修改文章tag标签的样式</title>
     <url>/2019/11/27/2019-11-27-hexo-change-tag-style/</url>
     <content><![CDATA[<p>修改文章tag标签的样式及文章底部添加本文结束标志</p>
