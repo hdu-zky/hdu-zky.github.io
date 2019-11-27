@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="Hackett">
 <meta property="og:description" content="hexo+next使用Valine评论系统">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-27T12:57:16.006Z">
+<meta property="og:updated_time" content="2019-11-27T13:07:50.292Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/27/2019-11-27-hexo-add-valine/">
@@ -230,7 +230,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-27 20:55:14 / 修改时间：20:57:16" itemprop="dateCreated datePublished" datetime="2019-11-27T20:55:14+08:00">2019-11-27</time>
+              <time title="创建时间：2019-11-27 20:55:14 / 修改时间：21:07:50" itemprop="dateCreated datePublished" datetime="2019-11-27T20:55:14+08:00">2019-11-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,6 +245,13 @@
             </span>
 
           
+            <span id="/2019/11/27/2019-11-27-hexo-add-valine/" class="post-meta-item leancloud_visitors" data-flag-title="hexo+next使用Valine评论系统" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -276,8 +283,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <a id="more"></a>
-<p>hexo+next使用Valine评论系统</p>
+        <p>hexo+next使用Valine评论系统</p>
+<a id="more"></a>
+<ol>
+<li>获取<code>APP ID</code> 和 <code>APP Key</code><br>登录或注册 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> , 进入控制台后点击左下角创建应用，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了</li>
+<li>打开_config.yml主题配置文件，搜索valine，填写<code>APP ID</code> 和 <code>APP Key</code>到对应位置。</li>
+<li>在<code>LeanCloud</code> -&gt; <code>存储</code> -&gt; <code>创建Class</code> -&gt; <code>无限制的Class</code>，创建class名称为：Comment</li>
+<li>在<code>LeanCloud</code> -&gt; <code>设置</code> -&gt; <code>安全中心</code>，把除<code>数据存储</code>外其他选项都关闭。</li>
+</ol>
 
     </div>
 
@@ -434,6 +447,97 @@
 
 
 
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=JHkNgVgWx2gN8wRUPLMIVwym-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'JHkNgVgWx2gN8wRUPLMIVwym-gzGzoHsz',
+            'X-LC-Key': 'VFexckU5wOxDmu7rcLKz5JWD',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
 
 
         
@@ -478,7 +582,7 @@
 
 
 <script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
   var guest = 'nick,mail,link';
   guest = guest.split(',').filter(item => {

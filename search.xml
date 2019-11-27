@@ -3,8 +3,14 @@
   <entry>
     <title>hexo+next使用Valine评论系统</title>
     <url>/2019/11/27/2019-11-27-hexo-add-valine/</url>
-    <content><![CDATA[<a id="more"></a>
-<p>hexo+next使用Valine评论系统</p>
+    <content><![CDATA[<p>hexo+next使用Valine评论系统</p>
+<a id="more"></a>
+<ol>
+<li>获取<code>APP ID</code> 和 <code>APP Key</code><br>登录或注册 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> , 进入控制台后点击左下角创建应用，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了</li>
+<li>打开_config.yml主题配置文件，搜索valine，填写<code>APP ID</code> 和 <code>APP Key</code>到对应位置。</li>
+<li>在<code>LeanCloud</code> -&gt; <code>存储</code> -&gt; <code>创建Class</code> -&gt; <code>无限制的Class</code>，创建class名称为：Comment</li>
+<li>在<code>LeanCloud</code> -&gt; <code>设置</code> -&gt; <code>安全中心</code>，把除<code>数据存储</code>外其他选项都关闭。</li>
+</ol>
 ]]></content>
       <categories>
         <category>hexo</category>
