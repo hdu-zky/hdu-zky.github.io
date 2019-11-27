@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>next主题如何添加动态背景canvas_nest</title>
+    <url>/2019/11/27/2019-11-27-add-background-canvas-nest/</url>
+    <content><![CDATA[<p>hexo next主题下怎么添加canvas_nest背景</p>
+<a id="more"></a>
+<p>我的hexo next是V7.5.0版本</p>
+<ol>
+<li>修改主题配置文件<br>打开 <code>/next/_config.yml</code>，<code>Ctrl+f</code>找到<code>Canvas-nest</code>，将<code>enable</code>改为<code>true</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canvas-nest</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/hustcc/canvas-nest.js</span></span><br><span class="line">canvas_nest:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+接下来有两种方法：<br>方法一：修改布局文件<br>打开 <code>next/layout/_layout.swig</code>，在<code>&lt;body&gt;&lt;/body&gt;</code>标签内添加以下代码<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.canvas_nest %&#125;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span></span><br><span class="line"> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+方法二：下载插件<code>canvas-nest</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-nest</span><br><span class="line"> themes/next-v7.5.0/<span class="built_in">source</span>/lib/canvas-nest</span><br></pre></td></tr></table></figure>
+然后运行以下代码重新构建<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo动态背景</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo右下角添加2d动画模型</title>
     <url>/2019/11/27/2019-11-27-add-live2dDemo/</url>
     <content><![CDATA[<p>hexo右下角添加2d动画模型</p>
