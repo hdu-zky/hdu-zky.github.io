@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo增加不蒜子统计功能</title>
+    <url>/2019/11/27/2019-11-27-hexo-add-busuanzi/</url>
+    <content><![CDATA[<p>hexo增加不蒜子统计页面访问量、访问人数、及阅读数</p>
+<a id="more"></a>
+<p>编辑主题配置文件 <code>themes/*/_config.yml</code> 中的 <code>busuanzi_count</code>的配置项。<br>当enable: true时，代表开启全局开启。<br>若site_uv（本站访客数）、site_pv（本站访客数）、page_pv（本文总阅读量）的值均为false时，不蒜子仅作记录而不会在页面上显示。<br>当你使用了live2Dmod在页面上时，不蒜子不能正常显示。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo busuanzi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo+next使用Valine评论系统</title>
     <url>/2019/11/27/2019-11-27-hexo-add-valine/</url>
     <content><![CDATA[<p>hexo+next使用Valine评论系统</p>
