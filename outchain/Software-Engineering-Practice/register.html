@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="//www.dpfile.com/app/pc-common/dp_favicon.a4af753914321c8e82e402e2b4be01d7.ico" rel="icon" type="image/x-icon">
+    <title>欢迎注册！</title>
+    <script type="text/javascript" src="./js/reg.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/register.css">
+</head>
+<body>
+<div class="content">
+    <form id="user_login" action="">
+        <h3>注 册</h3>
+        <input class="name" name="name" id="accountName" type="text" placeholder="请输入用户名">
+        <div id="error_name"></div>
+        <input class="code" name="password" id="password" type="password" placeholder="请输入密码">
+        <div id="error_pwd"></div>
+        <input class="check_code" name="check_password" id="check_password" type="password" placeholder="请确认密码">
+        <div id="error_c_pwd"></div>
+        <div id="CheckMsg" class="msg"></div>
+        <div class="btn">
+            <input type="button" id="submit" class="submit" value="注册" onclick="return check(this.form);">
+            <input type="reset" id="reset"  class="reset" value="重置" >
+        </div>
+    </form>
+    <p><a href="login.html" >已有账号？去登陆</a></p>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":180,"height":360},"mobile":{"show":false}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":180,"height":360},"mobile":{"show":false}});</script></body>
+</html>

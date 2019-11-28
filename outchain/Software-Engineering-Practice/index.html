@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="//www.dpfile.com/app/pc-common/dp_favicon.a4af753914321c8e82e402e2b4be01d7.ico" rel="icon" type="image/x-icon">
+    <title>美食推荐</title>
+    <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script>
+    <script src='js/jquery-3.1.1.min.js' type="text/javascript"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div class="head">
+    <a href="#"><img src="images/index.PNG" width="52px" height="52px" style="margin-left: 36px"></a>
+    <ul class="topmenu" >
+        <li><a href="#home" class="active">主页</a></li>
+        <!--<li><a href="#contact">联系我们</a></li>-->
+        <!--<li><a href="#about">关于我们</a></li>-->
+    </ul>
+    <ul class="rightMenu" >
+        <li><a id="accountName" href="register.html">去注册</a></li>
+        <li style="color: #f7f7f7;height: 100%;margin-top: 16px;"><span >|</span></li>
+        <li><a id="quits" href="login.html">去登陆</a></li>
+    </ul>
+</div>
+<div class="clearfix">
+    <div class="sidemenu">
+        <div class="sidemenu_content">
+            <div class="search">
+                <input name="search" id="search" type="text" placeholder="请输入搜索条件">
+                <button onclick="findSpot()"><a>搜 美 食</a></button>
+            </div>
+            <div class="supp" style="height: 20px;font-size: 12px;margin-bottom: 10px;">
+                <span>大家都在搜:</span>
+                <a href="#"><span>来福士</span></a>
+                <a href="#"><span>万象城</span></a>
+                <a href="#"><span>外婆家</span></a>
+                <a href="#"><span>一点点</span></a>
+            </div>
+            <div class="menu">
+                <div class="menu_left">
+                    <li><a href="#" class="active">地区分类</a></li>
+                </div>
+                <div class="detail">
+                    <a href="#" onclick="updateFood('北方口味',1,1)">北方口味</a>
+                    <a href="#" onclick="updateFood('江浙口味',1,2)">江浙口味</a>
+                    <a href="#" onclick="updateFood('广式口味',1,3)">广式口味</a>
+                    <a href="#" onclick="updateFood('湘赣口味',1,4)">湘赣口味</a>
+                    <a href="#" onclick="updateFood('西南口味',1,5)">西南口味</a>
+                    <a href="#" onclick="updateFood('西北口味',1,6)">西北口味</a>
+                    <a href="#" onclick="updateFood('清真',1,7)">清真</a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu_left">
+                    <li><a href="#">异国风味</a></li>
+                </div>
+                <div class="detail">
+                    <a href="#" onclick="updateFood('西式餐厅',2,1)">西式餐厅</a>
+                    <a href="#" onclick="updateFood('日韩料理',2,2)">日韩料理</a>
+                    <a href="#" onclick="updateFood('法式餐厅',2,3)">法式餐厅</a>
+                    <a href="#" onclick="updateFood('东南亚口味',2,4)">东南亚口味</a>
+                    <a href="#" onclick="updateFood('欧式餐厅',2,5)">欧式餐厅</a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu_left">
+                    <li><a href="#">小吃分类</a></li>
+                </div>
+                <div class="detail">
+                    <a href="#" onclick="updateFood('烧烤',3,1)">烧烤</a>
+                    <a href="#" onclick="updateFood('烧烤',3,2)">火锅</a>
+                    <a href="#" onclick="updateFood('麻辣烫',3,3)">麻辣烫</a>
+                    <a href="#" onclick="updateFood('面馆',3,4)">面馆</a>
+                    <a href="#" onclick="updateFood('海鲜',3,5)">海鲜</a>
+                    <a href="#" onclick="updateFood('小炒',3,6)">小炒</a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu_left">
+                    <li><a href="#">菜系分类</a></li>
+                </div>
+                <div class="detail">
+                    <a href="#" onclick="updateFood('鲁菜',4,1)">鲁菜</a>
+                    <a href="#" onclick="updateFood('川菜',4,2)">川菜</a>
+                    <a href="#" onclick="updateFood('粤菜',4,3)">粤菜</a>
+                    <a href="#" onclick="updateFood('苏菜',4,4)">苏菜</a>
+                    <a href="#" onclick="updateFood('浙菜',4,5)">浙菜</a>
+                    <a href="#" onclick="updateFood('闽菜',4,6)">闽菜</a>
+                    <a href="#" onclick="updateFood('湘菜',4,7)">湘菜</a>
+                    <a href="#" onclick="updateFood('徽菜',4,8)">徽菜</a>
+                </div>
+            </div>
+            <div class="search_map">
+                <input name="search_map" id="search_map" type="text" placeholder="请输入搜索条件">
+                <button onclick="findSpot()"><a>搜 地 址</a></button>
+            </div>
+            <div class="new_map">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="cent_left" onclick="left()"><div class="_left"></div></div>
+        <div class="cent">
+            <div class="header">
+                <h3 id="header">最热美食</h3>
+            </div>
+            <div class="bod">
+                <div class="bod_d"></div>
+            </div>
+        </div>
+        <div class="cent_right" onclick="right()"><div class="_right"></div></div>
+    </div>
+</div>
+<div id="back">
+    <a onclick="returnTop()"><img width="44" height="46" src="images/backt.png"></a>
+</div>
+<div class="footer">
+    <p>Copyright 2010-2019 All Rights Reserved.</p>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":180,"height":360},"mobile":{"show":false}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":180,"height":360},"mobile":{"show":false}});</script></body>
+</html>

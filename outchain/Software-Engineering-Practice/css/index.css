@@ -1,0 +1,341 @@
+body,div,dl,dt,dd,ul,ol,li,h2,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #fae8c8;
+}
+.footer {
+    background-color: #444;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    bottom: 0px;
+    text-align: center;
+}
+.head{
+    top: 0px;
+    width: 100%;
+    height: 52px;
+    position: fixed;
+    z-index: 99999;
+    background-color: #999;
+}
+.topmenu {
+    list-style-type: none;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+.topmenu li {
+    float: left;
+    height: 100%;
+}
+.topmenu li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+.topmenu li a:hover{
+    color: #f63;
+}
+.rightMenu{
+    width: 26%;
+    list-style-type: none;
+    display: inline-block;
+    float: right;
+}
+.rightMenu li {
+    float: left;
+}
+.rightMenu li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+.rightMenu li a:hover{
+    color: #f63;
+}
+.clearfix{
+    margin-top: 80px;
+    width: 100%;
+    height: 1000px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.sidemenu {
+    width: 25%;
+    position: fixed;
+    display: block;
+    float: left;
+}
+.sidemenu .sidemenu_content{
+    margin-left: 10px;
+}
+.sidemenu .menu {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+}
+.sidemenu .menu .menu_left{
+    width: 100%;
+    display: inline-block;
+}
+.sidemenu .menu .detail{
+    position: fixed;
+    z-index: 11111;
+    width: 160px;
+    top: 160px;
+    left: 180px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #999999;
+    zoom: 1;
+    background-color: #F8F0DD;
+    display: none;
+}
+.sidemenu .menu .detail a{
+    margin-bottom: 4px;
+    display: block;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #F8F0DD;
+    text-decoration: none;
+    color: #666;
+}
+.sidemenu .menu .detail a:hover{
+    background-color: #f63;
+    color: white;
+}
+.sidemenu li a {
+    border-radius: 6px;
+    margin-bottom: 4px;
+    box-shadow: 3px 3px 3px #999999;
+    display: block;
+    padding: 8px;
+    background-color: #eee;
+    text-decoration: none;
+    color: #666;
+}
+.sidemenu li a:hover{
+    background-color: #f63;
+    color: white;
+}
+.menu:hover .detail{
+    display: inline-block;
+    height: auto;
+}
+.sidemenu li a.active {
+    background-color: #008CBA;
+    color: white;
+}
+.search{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.search:hover{
+    box-shadow: 6px 6px 6px #999999;
+}
+.search input{
+    display: inline;
+    float: left;
+    width: 70%;
+    height: 40px;
+    border: 2px solid #f63;
+}
+.search button{
+    display: inline-block;
+    width: 30%;
+    border: 0px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: #f63;
+}
+.search_map{
+    width: 100%;
+    height: 30px;
+    margin-top: 6px;
+}
+.search_map:hover{
+    box-shadow: 6px 6px 6px #999999;
+}
+.search_map input{
+    display: inline;
+    float: left;
+    width: 70%;
+    height: 30px;
+    border: 2px solid #2e77e5;
+}
+.search_map button{
+    display: inline-block;
+    width: 30%;
+    border: 0px;
+    height: 30px;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: #2e77e5;
+}
+.supp a{
+    padding-left: 5px;
+    color: dimgray;
+}
+.new_map{
+    margin-top: 4px;
+    width: 100%;
+    height: 300px;
+}
+.new_map:hover{
+    box-shadow: 6px 6px 6px #999999;
+}
+#map{
+    width: 100%;
+    height: 300px;
+}
+.content{
+    width: 74%;
+    height: 1000px;
+    float: right;
+}
+.content .cent_left{
+    width: 5%;
+    height: 546px;
+    float: left;
+    display: inline-block;
+    border-radius: 6px;
+    margin-top: 50px;
+}
+.content .cent_left:hover{
+    background-color: #aaa;
+}
+.content .cent_left ._left{
+    margin-top: 270px;
+    margin-left: 18px;
+    width: 40px;
+    height: 40px;
+    border-bottom: 3px solid #aaa;
+    border-left: 3px solid #aaa;
+    transform: rotate(45deg);
+}
+.content .cent_left:hover ._left{
+    border-bottom: 3px solid #eee;
+    border-left: 3px solid #eee;
+}
+.content .cent_right{
+    width: 5%;
+    height: 546px;
+    border-radius: 6px;
+    margin-top: 50px;
+    float: right;
+    display: inline-block;
+}
+.content .cent_right:hover{
+    background-color: #aaa;
+}
+.content .cent_right ._right{
+    margin-top: 270px;
+    margin-right: 30px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-top: 3px solid #aaa;
+    border-right: 3px solid #aaa;
+    transform: rotate(45deg);
+}
+.content .cent_right:hover ._right{
+    border-top: 3px solid #eee;
+    border-right: 3px solid #eee;
+}
+.content .cent{
+    width: 90%;
+    display: inline-block;
+    height: 100%;
+}
+.content .cent .header {
+    width: 100%;
+    background-color: #f63;
+    color: white;
+    font-family: 微软雅黑;
+    display: block;
+    text-align: center;
+    border-radius: 6px;
+    padding: 7px;
+    box-shadow: 3px 3px 3px #999999;
+}
+.content .cent .bod{
+    width: 100%;
+    display: block;
+}
+
+.bod_d{
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    display: inline-block;
+}
+.bod_d .food{
+    width: 200px;
+    height: 260px;
+    display: inline-block;
+    box-shadow: 3px 3px 3px #999999;
+    margin: 7px 7px 7px 12px;
+}
+.bod_d .food:hover{
+    box-shadow: 6px 6px 6px #999999;
+}
+.bod_d .img{
+    width: 200px;height: 200px;
+}
+.bod_d .img a img{
+    border-radius: 6px 6px 0px 0px;
+}
+.bod_d .decoration{
+    width: 200px;height: 60px;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #eee;
+ }
+.bod_d .decoration strong{
+    display: block;
+    font-size: 14px;
+    color: #333;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+.bod_d .decoration span{
+    font-size: 14px;
+    height: 24px;
+    display: block;
+    line-height: 24px;
+    padding-left: 10px;
+}
+.bod_d .decoration p{
+    font-size: 14px;
+    padding-left: 6px;
+    display: inline-block;
+    color: #ff3232;
+}
+#back{
+    width: 44px;
+    height: 46px;
+    right: 40px;
+    bottom: 80px;
+    font-size: 14px;
+    z-index:9999;
+    position: fixed;
+}
+#back a{
+    text-decoration: none;
+}

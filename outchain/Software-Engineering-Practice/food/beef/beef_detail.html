@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="//www.dpfile.com/app/pc-common/dp_favicon.a4af753914321c8e82e402e2b4be01d7.ico" rel="icon" type="image/x-icon">
+    <title>美食推荐</title>
+    <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script>
+    <script type="text/javascript" src="beef_detail.js"></script>
+    <link rel="stylesheet" type="text/css" href="beef_detail.css">
+</head>
+<body>
+<div class="head">
+    <a href="#"><img src="../../images/index.png" width="52px" height="52px" style="margin-left: 36px"></a>
+    <ul class="topmenu" >
+        <li><a href="#" id="home">主页</a></li>
+        <li><a href="#contact">联系我们</a></li>
+        <li><a href="#about">关于我们</a></li>
+    </ul>
+    <ul class="rightMenu" >
+        <li><a id="accountName" href="#">去注册</a></li>
+    </ul>
+</div>
+<div class="content">
+    <div class="new_map">
+        <div class="search">
+            <input name="search" id="search" type="text" placeholder="请输入搜索地址">
+            <button onclick="findSpot()"><a>搜地址</a></button>
+        </div>
+        <div class="mark">
+            <button onclick="markSpot()">收藏该地点</button>
+        </div>
+        <div id="map"></div>
+    </div>
+    <div class="c_right">
+        <div class="top">
+            <div class="box" id="box">
+                <div class="inner">
+                    <ul>
+                        <li><a href="#"><img src="" alt="" id="image1"></a></li>
+                        <li><a href="#"><img src="" alt="" id="image2"></a></li>
+                        <li><a href="#"><img src="" alt="" id="image3"></a></li>
+                        <li><a href="#"><img src="" alt="" id="image4"></a></li>
+                        <li><a href="#"><img src="" alt="" id="image5"></a></li>
+                    </ul>
+                    <ol class="bar"></ol>
+                    <div id="arr">
+                        <span id="left"><</span>
+                        <span id="right">></span>
+                    </div>
+                </div>
+            </div>
+            <div class="desc">
+                <div class="desc_name">
+                    <p id="name">酸汤雪花肥牛面</p>
+                </div>
+                <div class="desc_cont">
+                    <p class="spot">..................................................................</p>
+                    <span id="desc">酸汤雪花肥牛面酸汤雪花肥牛面</span>
+                    <p class="spot">..................................................................</p>
+                </div>
+                <div class="price">
+                    <span>价格:</span><span id="price" style="color: #ff6633">37</span>
+                </div>
+            </div>
+        </div>
+        <div class="bot">
+            <p>店家地址:<span id="addr">美食小编</span></p>
+            <p>菜谱：1111/　关注：121　/　粉丝：1112533</p>　
+            <p>2019-01-09　/　21499人看过 </p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>Copyright 2010-2019 All Rights Reserved.</p>
+</div>
+<script>
+    /**
+     *
+     * @param id  传入元素的id
+     * @returns {HTMLElement | null}  返回标签对象，方便获取元素
+     */
+    var imgNum = ['../../images/1.jpg','../../images/beef_2.jpg','../../images/beef_3.jpg',
+        '../../images/beef_4.jpg','../../images/beef_5.jpg'];
+    var images1 = document.getElementById('image1');
+    var images2 = document.getElementById('image2');
+    var images3 = document.getElementById('image3');
+    var images4 = document.getElementById('image4');
+    var images5 = document.getElementById('image5');
+    images1.src = imgNum[0];
+    images2.src = imgNum[1];
+    images3.src = imgNum[2];
+    images4.src = imgNum[3];
+    images5.src = imgNum[4];
+    function my$(id) {
+        return document.getElementById(id);
+    }
+    //获取各元素，方便操作
+    var box=my$("box");
+    var inner=box.children[0];
+    var ulObj=inner.children[0];
+    var list=ulObj.children;
+    var olObj=inner.children[1];
+    var arr=my$("arr");
+    var imgWidth=inner.offsetWidth;
+    var right=my$("right");
+    var pic=0;
+    //根据li个数，创建小按钮
+    for(var i=0;i<list.length;i++){
+        var liObj=document.createElement("li");
+        olObj.appendChild(liObj);
+        liObj.innerText=(i+1);
+        liObj.setAttribute("index",i);
+        //为按钮注册mouseover事件
+        liObj.onmouseover=function () {
+            //先清除所有按钮的样式
+            for (var j=0;j<olObj.children.length;j++){
+                olObj.children[j].removeAttribute("class");
+            }
+            this.className="current";
+            pic=this.getAttribute("index");
+            animate(ulObj,-pic*imgWidth);
+        }
+    }
+    //设置ol中第一个li有背景颜色
+    olObj.children[0].className = "current";
+    //克隆一个ul中第一个li,加入到ul中的最后=====克隆
+    ulObj.appendChild(ulObj.children[0].cloneNode(true));
+    var timeId=setInterval(onmouseclickHandle,3000);
+    //左右焦点实现点击切换图片功能
+    box.onmouseover=function () {
+        arr.style.display="block";
+        clearInterval(timeId);
+    };
+    box.onmouseout=function () {
+        arr.style.display="none";
+        timeId=setInterval(onmouseclickHandle,3000);
+    };
+    right.onclick=onmouseclickHandle;
+    function onmouseclickHandle() {
+        //如果pic的值是5,恰巧是ul中li的个数-1的值,此时页面显示第六个图片,而用户会认为这是第一个图,
+        //所以,如果用户再次点击按钮,用户应该看到第二个图片
+        if (pic == list.length - 1) {
+            //如何从第6个图,跳转到第一个图
+            pic = 0;//先设置pic=0
+            ulObj.style.left = 0 + "px";//把ul的位置还原成开始的默认位置
+        }
+
+        pic++;//立刻设置pic加1,那么此时用户就会看到第二个图片了
+        animate(ulObj, -pic * imgWidth);//pic从0的值加1之后,pic的值是1,然后ul移动出去一个图片
+        //如果pic==5说明,此时显示第6个图(内容是第一张图片),第一个小按钮有颜色,
+        if (pic == list.length - 1) {
+            //第五个按钮颜色干掉
+            olObj.children[olObj.children.length - 1].className = "";
+            //第一个按钮颜色设置上
+            olObj.children[0].className = "current";
+        } else {
+            //干掉所有的小按钮的背景颜色
+            for (var i = 0; i < olObj.children.length; i++) {
+                olObj.children[i].removeAttribute("class");
+            }
+            olObj.children[pic].className = "current";
+        }
+    }
+    left.onclick=function () {
+        if (pic==0){
+            pic=list.length-1;
+            ulObj.style.left=-pic*imgWidth+"px";
+        }
+        pic--;
+        animate(ulObj,-pic*imgWidth);
+        for (var i = 0; i < olObj.children.length; i++) {
+            olObj.children[i].removeAttribute("class");
+        }
+        //当前的pic索引对应的按钮设置颜色
+        olObj.children[pic].className = "current";
+    };
+    //设置任意的一个元素,移动到指定的目标位置
+    function animate(element, target) {
+        clearInterval(element.timeId);
+        //定时器的id值存储到对象的一个属性中
+        element.timeId = setInterval(function () {
+            //获取元素的当前的位置,数字类型
+            var current = element.offsetLeft;
+            //每次移动的距离
+            var step = 10;
+            step = current < target ? step : -step;
+            //当前移动到位置
+            current += step;
+            if (Math.abs(current - target) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                //清理定时器
+                clearInterval(element.timeId);
+                //直接到达目标
+                element.style.left = target + "px";
+            }
+        }, 10);
+    }
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":180,"height":360},"mobile":{"show":false}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":180,"height":360},"mobile":{"show":false}});</script></body>
+</html>
