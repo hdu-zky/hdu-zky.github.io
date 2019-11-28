@@ -5,7 +5,7 @@
     <url>/2019/11/27/2019-11-27-hexo-add-busuanzi/</url>
     <content><![CDATA[<p>hexo增加不蒜子统计页面访问量、访问人数、及阅读数</p>
 <a id="more"></a>
-<p>编辑主题配置文件 <code>themes/*/_config.yml</code> 中的 <code>busuanzi_count</code>的配置项。<br>当enable: true时，代表开启全局开启。<br>若site_uv（本站访客数）、site_pv（本站访客数）、page_pv（本文总阅读量）的值均为false时，不蒜子仅作记录而不会在页面上显示。<br>我使用的是nextV7.5.0版本，该版本<code>\layout\_third-party\analytics</code>下没有<code>busuanzi-counter.swig</code>文件，而在<code>\layout\_third-party\statistics</code>目录下，复制粘贴到<code>analytics</code>目录下即可。<br>当你使用了<code>live2Dmod</code>在页面上时，不蒜子不能正常显示。</p>
+<p>编辑主题配置文件 <code>themes/next/_config.yml</code> 中的 <code>busuanzi_count</code>的配置项。<br>当enable: true时，代表开启全局开启。<br>若site_uv（本站访客数）、site_pv（本站访客数）、page_pv（本文总阅读量）的值均为false时，不蒜子仅作记录而不会在页面上显示。<br>我使用的是<code>nextV7.5.0</code>版本，该版本<code>\layout\_third-party\analytics</code>下没有<code>busuanzi-counter.swig</code>文件，而在<code>\layout\_third-party\statistics</code>目录下，复制粘贴到<code>analytics</code>目录下即可。<br>当你使用了<code>live2Dmod</code>在页面上时，不蒜子不能正常显示。</p>
 ]]></content>
       <categories>
         <category>hexo</category>
@@ -74,10 +74,10 @@
 <a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Code : undefined [410 POST https://avoscloud.com/1.1/classes/Comment]`</span><br></pre></td></tr></table></figure>
 
-<p>一开始他是这样的<br><img src="/2019/11/27/2019-11-27-valine-410-post-error/error410.png" alt="410错误"><br>然后我再网上百度了一些解答，<a href="https://laytonsun.com/learning/2019-08/enable-comments.html" target="_blank" rel="noopener">有说是leancloud地区问题</a>的，<a href="https://www.jianshu.com/p/f4658df66a15" target="_blank" rel="noopener">也有说是版本之间一些参数的问题</a>，我检查一下我的发现都不是这些问题,</p>
+<p>一开始他是这样的<br><img src="https://i.loli.net/2019/11/28/bBpy98xVMHfagzD.png" alt="error410.png"><br>然后我再网上百度了一些解答，<a href="https://laytonsun.com/learning/2019-08/enable-comments.html" target="_blank" rel="noopener">有说是leancloud地区问题</a>的，<a href="https://www.jianshu.com/p/f4658df66a15" target="_blank" rel="noopener">也有说是版本之间一些参数的问题</a>，我检查一下我的发现都不是这些问题,</p>
 <p>然后打开 <code>/next/_config.yml</code>主题配置文件看到了代码：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment"># When enable is set to be true</span></span><br><span class="line">  appid: 我的appid<span class="comment"># Your leancloud application appid</span></span><br><span class="line">  appkey: 我的appkey<span class="comment"># Your leancloud application appkey</span></span><br></pre></td></tr></table></figure>
-<p>它在编辑器里是这样显示的<br><img src="/2019/11/27/2019-11-27-valine-410-post-error/config.png" alt="410错误"><br>可以看到<code>enable: true</code>中的颜色根本没有改变，于是我把#及后面的注释换行，然后就高亮显示了，在运行一下，成功。</p>
+<p>它在编辑器里是这样显示的<br><img src="https://i.loli.net/2019/11/28/jnU8TwqsO2Jbu9D.png" alt="config.png"><br>可以看到<code>enable: true</code>中的颜色根本没有改变，于是我把#及后面的注释换行，然后就高亮显示了，在运行一下，成功。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> </span><br><span class="line">  <span class="comment"># When enable is set to be true</span></span><br><span class="line">  appid: 我的appid</span><br><span class="line">  <span class="comment"># Your leancloud application appid</span></span><br><span class="line">  appkey: 我的appkey</span><br><span class="line">  <span class="comment"># Your leancloud application appkey</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>hexo</category>
