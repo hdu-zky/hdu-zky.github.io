@@ -77,7 +77,8 @@
 <li>把主页配置文件<code>_config.yml</code>里的<code>post_asset_folder:false</code>这个选项设置为<code>true</code></li>
 <li>安装插件,这是下载安装一个可以上传本地图片的插件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image -- save–save</span><br></pre></td></tr></table></figure></li>
 <li>安装完成后，再运行<code>hexo n “title”</code>来生成md博文时，<br><code>/source/_posts</code>文件夹内除了<code>title.md</code>文件还有一个同名的文件夹<code>title</code>，<br>将你想在博文中插入的照片放到这个同名文件夹中即可。</li>
-<li>插入图片只需要在想添加的位置写入以下形式，如<code>![图片1](1.png)</code>即可<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![图片不能显示时的的替代文字](图片名字.图片格式)</span><br></pre></td></tr></table></figure></li>
+<li>插入图片只需要在想添加的位置写入以下形式，如<code>![图片1](1.png)</code>即可<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![图片不能显示时的的替代文字](图片名字.图片格式)</span><br></pre></td></tr></table></figure>
+另外也可将图片存储到网络上以加快加载速度，而<a href="https://sm.ms/" target="_blank" rel="noopener">SM.MS</a>是一个免费无注册的图片存储网站，我们可以将图片存储在上面然后把括号内换成图片的url就好了。</li>
 </ol>
 ]]></content>
       <categories>
