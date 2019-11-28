@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo Next主题侧边栏嵌入网易云音乐</title>
+    <url>/2019/11/28/2019-11-28-hexo-add-wangyiyun-music/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>如何在你的博客中嵌入音乐播放器使你的博客看起来更丰富呢？</p>
+<a id="more"></a>
+<ol>
+<li>首先进入网页版的网易云音乐找到你喜欢的歌曲<br><img src="https://i.loli.net/2019/11/28/U85rytsiGRAcCEI.png" alt="wangye.png"></li>
+<li>在歌曲详情页点击<code>生成外链播放器</code><br><img src="https://i.loli.net/2019/11/28/gfsDPCmuL2XtbQ5.png" alt="dianji.png"></li>
+<li>然后选择是否自动播放等一些选项后直接复制代码<br><img src="https://i.loli.net/2019/11/28/vwO7MLcFuo63Sbn.png" alt="fuzhi.png"></li>
+<li>在根目录下的<code>/theme/next/layout/_macro/sidebar.swig</code>文件中选择你要添加播放器的位置，然后粘贴外链接。<br><img src="https://i.loli.net/2019/11/28/rEmndfiUkL75ya8.png" alt="niantie.png"></li>
+<li>重新生成运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo 网易云音乐</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo+next增加不蒜子统计功能</title>
     <url>/2019/11/27/2019-11-27-hexo-add-busuanzi/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>hexo增加不蒜子统计页面访问量、访问人数、及阅读数</p>
