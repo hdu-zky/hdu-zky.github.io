@@ -36,7 +36,7 @@ function check(form){
                 	
                     alert("验证通过");
                     setTimeout(function(){}, 3000);
-                    window.location.href =  "index.html" + '?accountName='+accountName+'&userid='+tmp.User1.user_id;//指向登录的页面地址
+                    window.location.href =  "index.html" + '?accountName='+accountName;//指向登录的页面地址
                 }else{
                     alert("登陆失败!");
                     setTimeout(function(){}, 3000);
@@ -47,11 +47,18 @@ function check(form){
             }
         }
     };
+	var str = hex_md5(password +  hex_md5(accountName));
+	var data={
+		'userName': accountName,
+		'password': str
+	}
     //3.建立与服务器的连接（post请求方式，也可以使用get请求方式）
-    xhr.open("post","http://localhost:8080/duanxueqi/loginservlet");
-    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xhr.open("post","//120.78.160.95:8080/LabManager/user/login");
+    xhr.setRequestHeader('Content-type','application/json');
     //4.向服务器发出请求(使用post请求方式将数据发往后台)
-    xhr.send("username="+accountName+"&password="+password);
+	var res =  JSON.stringify(data);
+	console.log(res);
+    xhr.send(res);
 }
 
 function getXHR(){

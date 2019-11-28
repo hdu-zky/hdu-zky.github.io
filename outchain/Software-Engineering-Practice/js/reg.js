@@ -59,7 +59,7 @@ function check(){
         }
     };
     //3.建立与服务器的连接（post请求方式，也可以使用get请求方式）
-    xhr.open("post","http://localhost:8080/duanxueqi/registservlet");
+    xhr.open("post","//120.78.160.95:8080/LabManager/");
     xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
     //4.向服务器发出请求(使用post请求方式将数据发往后台)
     xhr.send("username="+oUname.value+"&password="+oUcpass.value);
