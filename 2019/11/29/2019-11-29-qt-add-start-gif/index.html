@@ -46,17 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="我的剑就是你的剑">
-<meta name="keywords" content="hexo blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hackett">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="如何在程序加载完成之前让用户觉得你的程序不是卡死，从而提高用户体验呢？">
+<meta name="keywords" content="Qt开机动画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qt5.9利用QSplashScreen实现开机动画">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;29&#x2F;2019-11-29-qt-add-start-gif&#x2F;index.html">
 <meta property="og:site_name" content="Hackett">
-<meta property="og:description" content="我的剑就是你的剑">
+<meta property="og:description" content="如何在程序加载完成之前让用户觉得你的程序不是卡死，从而提高用户体验呢？">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-29T08:39:32.585Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2019/page/2/">
+<link rel="canonical" href="http://yoursite.com/2019/11/29/2019-11-29-qt-add-start-gif/">
 
 
 <script id="page-configurations">
@@ -64,13 +65,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | Hackett</title>
+  <title>Qt5.9利用QSplashScreen实现开机动画 | Hackett</title>
   
 
 
@@ -201,96 +202,121 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/2019-11-29-qt-add-start-gif/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/user.jpeg">
+      <meta itemprop="name" content="Peter Hackett">
+      <meta itemprop="description" content="我的剑就是你的剑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hackett">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Qt5.9利用QSplashScreen实现开机动画
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-29 16:27:32 / 修改时间：16:39:32" itemprop="dateCreated datePublished" datetime="2019-11-29T16:27:32+08:00">2019-11-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Qt/" itemprop="url" rel="index">
+                    <span itemprop="name">Qt</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 13 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/29/2019-11-29-qt-add-start-gif/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/29/2019-11-29-qt-add-start-gif/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>如何在程序加载完成之前让用户觉得你的程序不是卡死，从而提高用户体验呢？</p>
+<a id="more"></a>
+<h3 id="加载图片并延时"><a href="#加载图片并延时" class="headerlink" title="加载图片并延时"></a>加载图片并延时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;QApplication&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QPixmap&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QSplashScreen&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QDateTime&gt;</span></span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">	QApplication a(argc, argv);</span><br><span class="line">	QPixmap pixmap(<span class="string">":/images/hh"</span>); //加载资源文件中的图片</span><br><span class="line">	QSplashScreen splash(pixmap); //利用图片创建一个QSplashScreen对象</span><br><span class="line">	splash.show(); //显示图片</span><br><span class="line">	QDateTime time = QDateTime::currentDateTime();</span><br><span class="line">    QDateTime currentTime = QDateTime::currentDateTime();   //记录当前时间</span><br><span class="line">    <span class="keyword">while</span> (time.secsTo(currentTime) &lt;= 5)                   //5为需要延时的秒数</span><br><span class="line">    &#123;</span><br><span class="line">        currentTime = QDateTime::currentDateTime();	</span><br><span class="line">		a.processEvents();  </span><br><span class="line">	&#125;</span><br><span class="line">	Dialoghome w;</span><br><span class="line">	w.show();</span><br><span class="line">	splash.finish(&amp;w);</span><br><span class="line">	<span class="built_in">return</span> a.exec();</span><br></pre></td></tr></table></figure>
+<h3 id="开机加载GIF动图并延时"><a href="#开机加载GIF动图并延时" class="headerlink" title="开机加载GIF动图并延时"></a>开机加载GIF动图并延时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;QApplication&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QMovie&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QPixmap&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QLabel&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QSplashScreen&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QDateTime&gt;                         //添加QDateTime头文件</span></span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    QApplication a(argc, argv);</span><br><span class="line">    QPixmap pixmap(<span class="string">":/images/hh"</span>);</span><br><span class="line">    QSplashScreen splash(pixmap);  //利用图片创建一个QSplashScreen对象</span><br><span class="line">    QMovie movie(<span class="string">":/images/hh"</span>);   //创建启动需要显示的图片</span><br><span class="line">    QLabel label(&amp;splash);</span><br><span class="line">    label.setMovie(&amp;movie);</span><br><span class="line">    movie.start();  //启动GIF</span><br><span class="line">    splash.show();  //显示图片</span><br><span class="line">    QDateTime time = QDateTime::currentDateTime();</span><br><span class="line">    QDateTime currentTime = QDateTime::currentDateTime();   //记录当前时间</span><br><span class="line">    <span class="keyword">while</span> (time.secsTo(currentTime) &lt;= 5)                   //5为需要延时的秒数</span><br><span class="line">    &#123;</span><br><span class="line">        currentTime = QDateTime::currentDateTime();</span><br><span class="line">        a.processEvents();      //使程序在显示启动画面的同时仍能响应鼠标其他事件</span><br><span class="line">    &#125;;</span><br><span class="line">    MainWindow w;</span><br><span class="line">	w.show();</span><br><span class="line">	splash.finish(&amp;w);  //在主窗体对象初始化完成后,结束启动画面</span><br><span class="line">	<span class="built_in">return</span> a.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+	  
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Qt%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB/" rel="tag"><i class="fa fa-tag"></i> Qt开机动画</a>
+          </div>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-26T22:54:28+08:00"
-              content="2019-11-26">
-          11-26
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/26/2019-11-26-hexo-add-404page/" itemprop="url">
-            <span itemprop="name">hexo配置404界面</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-26T19:08:41+08:00"
-              content="2019-11-26">
-          11-26
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/26/2019-11-26-basic-command-of-git/" itemprop="url">
-            <span itemprop="name">git的基本命令</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-26T15:08:29+08:00"
-              content="2019-11-26">
-          11-26
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/26/2019-11-26-build-a-hexo-blog/" itemprop="url">
-            <span itemprop="name">搭建hexo博客</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/28/2019-11-28-hexo-add-wangyiyun-music/" rel="prev" title="Hexo Next主题侧边栏嵌入网易云音乐">
+      <i class="fa fa-chevron-left"></i> Hexo Next主题侧边栏嵌入网易云音乐
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-  </nav>
-
 
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -315,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载图片并延时"><span class="nav-number">1.</span> <span class="nav-text">加载图片并延时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开机加载GIF动图并延时"><span class="nav-number">2.</span> <span class="nav-text">开机加载GIF动图并延时</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
