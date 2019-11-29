@@ -77,7 +77,7 @@ body{
 }
 .sidemenu {
     width: 25%;
-    position: fixed;
+    /*position: fixed;*/
     display: block;
     float: left;
 }
@@ -94,7 +94,7 @@ body{
     display: inline-block;
 }
 .sidemenu .menu .detail{
-    position: fixed;
+    /*position: fixed;*/
     z-index: 11111;
     width: 10em;
     top: 10em;
