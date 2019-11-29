@@ -13,7 +13,7 @@ body{
     background-color: #444;
     color: white;
     width: 100%;
-    padding: 15px;
+    padding: 1em;
     bottom: 0px;
     text-align: center;
 }
@@ -40,7 +40,7 @@ body{
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 1em;
     text-decoration: none;
 }
 .topmenu li a:hover{
@@ -59,16 +59,16 @@ body{
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 1em;
     text-decoration: none;
 }
 .rightMenu li a:hover{
     color: #f63;
 }
 .clearfix{
-    margin-top: 80px;
+    margin-top: 5em;
     width: 100%;
-    height: 1000px;
+    height: 62.5em;
 }
 .clearfix::after {
     content: "";
@@ -82,7 +82,7 @@ body{
     float: left;
 }
 .sidemenu .sidemenu_content{
-    margin-left: 10px;
+    margin-left: 0.625em;
 }
 .sidemenu .menu {
     width: 100%;
@@ -96,20 +96,20 @@ body{
 .sidemenu .menu .detail{
     position: fixed;
     z-index: 11111;
-    width: 160px;
-    top: 160px;
-    left: 180px;
-    border-radius: 6px;
-    box-shadow: 3px 3px 3px #999999;
+    width: 10em;
+    top: 10em;
+    left: 11.25em;
+    border-radius: 0.375em;
+    box-shadow: 0.2em 0.2em 0.2em #999999;
     zoom: 1;
     background-color: #F8F0DD;
     display: none;
 }
 .sidemenu .menu .detail a{
-    margin-bottom: 4px;
+    margin-bottom: 0.25em;
     display: block;
-    padding: 8px;
-    border-radius: 6px;
+    padding: 0.5em;
+    border-radius: 0.375em;
     background-color: #F8F0DD;
     text-decoration: none;
     color: #666;
@@ -119,11 +119,11 @@ body{
     color: white;
 }
 .sidemenu li a {
-    border-radius: 6px;
-    margin-bottom: 4px;
-    box-shadow: 3px 3px 3px #999999;
+    border-radius: 0.375em;
+    margin-bottom: 0.25em;
+    box-shadow: 0.2em 0.2em 0.2em #999999;
     display: block;
-    padding: 8px;
+    padding: 0.5em;
     background-color: #eee;
     text-decoration: none;
     color: #666;
@@ -142,102 +142,102 @@ body{
 }
 .search{
     width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
+    height: 2.5em;
+    margin-bottom: 0.625em;
 }
 .search:hover{
-    box-shadow: 6px 6px 6px #999999;
+    box-shadow: 0.375em 0.375em 0.375em #999999;
 }
 .search input{
     display: inline;
     float: left;
     width: 70%;
-    height: 40px;
-    border: 2px solid #f63;
+    height: 2.5em;
+    border: 0.11em solid #f63;
 }
 .search button{
     display: inline-block;
     width: 30%;
     border: 0px;
-    height: 40px;
+    height: 2.5em;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 1em;
     background-color: #f63;
 }
 .search_map{
     width: 100%;
-    height: 30px;
-    margin-top: 6px;
+    height: 1.8em;
+    margin-top: 0.375em;
 }
 .search_map:hover{
-    box-shadow: 6px 6px 6px #999999;
+    box-shadow: 0.375em 0.375em 0.375em #999999;
 }
 .search_map input{
     display: inline;
     float: left;
     width: 70%;
-    height: 30px;
-    border: 2px solid #2e77e5;
+    height: 1.8em;
+    border: 0.1em solid #2e77e5;
 }
 .search_map button{
     display: inline-block;
     width: 30%;
     border: 0px;
-    height: 30px;
+    height: 1.8em;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 1em;
     background-color: #2e77e5;
 }
 .supp a{
-    padding-left: 5px;
+    padding-left: 0.3em;
     color: dimgray;
 }
 .new_map{
-    margin-top: 4px;
+    margin-top: 0.25em;
     width: 100%;
-    height: 300px;
+    height: 18.7em;
 }
 .new_map:hover{
-    box-shadow: 6px 6px 6px #999999;
+    box-shadow: 0.375em 0.375em 0.375em #999999;
 }
 #map{
     width: 100%;
-    height: 300px;
+    height: 18.7em;
 }
 .content{
     width: 74%;
-    height: 1000px;
+    height: 62.5em;
     float: right;
 }
 .content .cent_left{
     width: 5%;
-    height: 546px;
+    height: 34.125em;
     float: left;
     display: inline-block;
-    border-radius: 6px;
-    margin-top: 50px;
+    border-radius: 0.375em;
+    margin-top: 3.125em;
 }
 .content .cent_left:hover{
     background-color: #aaa;
 }
 .content .cent_left ._left{
-    margin-top: 270px;
-    margin-left: 18px;
-    width: 40px;
-    height: 40px;
-    border-bottom: 3px solid #aaa;
-    border-left: 3px solid #aaa;
+    margin-top: 16.875em;
+    margin-left: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    border-bottom: 0.2em solid #aaa;
+    border-left: 0.2em solid #aaa;
     transform: rotate(45deg);
 }
 .content .cent_left:hover ._left{
-    border-bottom: 3px solid #eee;
-    border-left: 3px solid #eee;
+    border-bottom: 0.2em solid #eee;
+    border-left: 0.2em solid #eee;
 }
 .content .cent_right{
     width: 5%;
-    height: 546px;
-    border-radius: 6px;
-    margin-top: 50px;
+    height: 34.125em;
+    border-radius: 0.375em;
+    margin-top: 3.125em;
     float: right;
     display: inline-block;
 }
@@ -245,18 +245,18 @@ body{
     background-color: #aaa;
 }
 .content .cent_right ._right{
-    margin-top: 270px;
-    margin-right: 30px;
-    width: 40px;
-    height: 40px;
+    margin-top: 16.875em;
+    margin-right: 1.8em;
+    width: 2.5em;
+    height: 2.5em;
     display: block;
-    border-top: 3px solid #aaa;
-    border-right: 3px solid #aaa;
+    border-top: 0.2em solid #aaa;
+    border-right: 0.2em solid #aaa;
     transform: rotate(45deg);
 }
 .content .cent_right:hover ._right{
-    border-top: 3px solid #eee;
-    border-right: 3px solid #eee;
+    border-top: 0.2em solid #eee;
+    border-right: 0.2em solid #eee;
 }
 .content .cent{
     width: 90%;
@@ -270,9 +270,9 @@ body{
     font-family: 微软雅黑;
     display: block;
     text-align: center;
-    border-radius: 6px;
-    padding: 7px;
-    box-shadow: 3px 3px 3px #999999;
+    border-radius: 0.375em;
+    padding: 0.4em;
+    box-shadow: 0.2em 0.2em 0.2em #999999;
 }
 .content .cent .bod{
     width: 100%;
@@ -280,59 +280,59 @@ body{
 }
 
 .bod_d{
-    margin-top: 10px;
+    margin-top: 0.625em;
     float: left;
     width: 100%;
     display: inline-block;
 }
 .bod_d .food{
-    width: 200px;
+    width: 12.5em;
     height: 260px;
     display: inline-block;
-    box-shadow: 3px 3px 3px #999999;
-    margin: 7px 7px 7px 12px;
+    box-shadow: 0.2em 0.2em 0.2em #999999;
+    margin: 0.4em 0.4em 0.4em 0.75em;
 }
 .bod_d .food:hover{
-    box-shadow: 6px 6px 6px #999999;
+    box-shadow: 0.375em 0.375em 0.375em #999999;
 }
 .bod_d .img{
-    width: 200px;height: 200px;
+    width: 12.5em;height: 12.5em;
 }
 .bod_d .img a img{
-    border-radius: 6px 6px 0px 0px;
+    border-radius: 0.375em 0.375em 0px 0px;
 }
 .bod_d .decoration{
-    width: 200px;height: 60px;
-    border-radius: 0px 0px 6px 6px;
+    width: 12.5em;height: 3.75em;
+    border-radius: 0px 0px 0.375em 0.375em;
     background-color: #eee;
  }
 .bod_d .decoration strong{
     display: block;
-    font-size: 14px;
+    font-size: 0.875em;
     color: #333;
-    height: 30px;
-    line-height: 30px;
-    padding-left: 10px;
+    height: 1.8em;
+    line-height: 1.8em;
+    padding-left: 0.625em;
 }
 .bod_d .decoration span{
-    font-size: 14px;
-    height: 24px;
+    font-size: 0.875em;
+    height: 1.5em;
     display: block;
-    line-height: 24px;
-    padding-left: 10px;
+    line-height: 1.5em;
+    padding-left: 0.625em;
 }
 .bod_d .decoration p{
-    font-size: 14px;
-    padding-left: 6px;
+    font-size: 0.875em;
+    padding-left: 0.375em;
     display: inline-block;
     color: #ff3232;
 }
 #back{
-    width: 44px;
-    height: 46px;
-    right: 40px;
-    bottom: 80px;
-    font-size: 14px;
+    width: 2.75em;
+    height: 2.875em;
+    right: 2.5em;
+    bottom: 5em;
+    font-size: 0.875em;
     z-index:9999;
     position: fixed;
 }

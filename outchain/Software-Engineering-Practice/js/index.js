@@ -117,7 +117,7 @@ function show() {
         '?name='+imgNum[i].food_name+'&price='+imgNum[i].food_price+'&src='+imgNum[i].food_pic
             +'&id='+imgNum[i].food_id+'&num='+imgNum[i].food_rate+'&desc='+imgNum[i].food_detail+'&userid='+a.userid+'">\
         <img src="'+'images/foodpic/'+imgNum[i].food_pic+'.jpg'
-            +'" title="" alt="'+imgNum[i].food_name+'" id="image1" width="200px" height="200px">\
+            +'" title="" alt="'+imgNum[i].food_name+'" id="image1" width="12.5em" height="12.5em">\
         </a>\
         </div>\
         <div class="decoration">\
