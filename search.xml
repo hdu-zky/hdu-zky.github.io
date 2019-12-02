@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Qt选项卡窗口实现查找替换</title>
+    <url>/2019/12/02/2019-12-2-qt-tabWidget-find-replace/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>查找与替换是存在共同之处的功能，可以将他们放在一个选项卡窗口下</p>
+<a id="more"></a>
+<h4 id="findtext设计replaceSignal信号"><a href="#findtext设计replaceSignal信号" class="headerlink" title="findtext设计replaceSignal信号"></a>findtext设计replaceSignal信号</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">signals:</span><br><span class="line">	// 第一个参数为要查找的,第二个为替换目标</span><br><span class="line">    void replaceSignal(const QString &amp;, const QString &amp;);</span><br></pre></td></tr></table></figure>
+<p>在<code>findText.cpp</code>发送信号</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void findText::<span class="function"><span class="title">emitReplaceSignal</span></span>()&#123;</span><br><span class="line">    QString string = ui-&gt;lineEdit_2-&gt;text();</span><br><span class="line">    QString replaceStr = ui-&gt;lineEdit_3-&gt;text();</span><br><span class="line">    <span class="keyword">if</span>(!string.isEmpty() &amp;&amp; !replaceStr.isEmpty())&#123;</span><br><span class="line">        emit replaceSignal(string, replaceStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="主窗口设计接受信号槽"><a href="#主窗口设计接受信号槽" class="headerlink" title="主窗口设计接受信号槽"></a>主窗口设计接受信号槽</h4><p>在<code>MainWindow.h</code>声明接受信号槽</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">private slots:</span><br><span class="line">	void StartReplace(const QString&amp;, const QString&amp;);</span><br></pre></td></tr></table></figure>
+<p>在<code>MainWindow.cpp</code>内以<code>FindDlg(int choice)</code>处理查找替换两种功能</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 打开查找对话框</span><br><span class="line">void MainWindow::Find(bool)&#123;</span><br><span class="line">    FindDlg(0);</span><br><span class="line">&#125;</span><br><span class="line">void MainWindow::Find_Replace(bool)&#123;</span><br><span class="line">    FindDlg(1);</span><br><span class="line">&#125;</span><br><span class="line">void MainWindow::FindDlg(int choice)&#123;</span><br><span class="line">    findtext = new findText(this, choice);</span><br><span class="line">    // 接受来自findtext发过来的信号serachsignal，replaceSignal</span><br><span class="line">    connect(findtext, SIGNAL(searchSignal(const QString&amp;, bool, bool, bool)),</span><br><span class="line">            this, SLOT(StartSearch(const QString&amp;, bool, bool, bool)));</span><br><span class="line">    connect(findtext, SIGNAL(replaceSignal(const QString&amp;, const QString&amp;)),</span><br><span class="line">            this,SLOT(StartReplace(const QString&amp;, const QString&amp;)));</span><br><span class="line">    activeEditor()-&gt;moveCursor(QTextCursor::Start);</span><br><span class="line">    findtext-&gt;show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>findtext.cpp</code>构造函数内进行选项卡的对应</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(choice == 0)&#123; //Find</span><br><span class="line">	ui-&gt;tabWidget-&gt;setCurrentIndex(0);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(choice == 1)&#123; //Find&amp;Replace</span><br><span class="line">	ui-&gt;tabWidget-&gt;setCurrentIndex(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>开始替换</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void MainWindow::StartReplace(const QString &amp;data, const QString &amp;replaceStr)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!activeEditor())&#123;</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    QTextCursor cursor = activeEditor()-&gt;textCursor();</span><br><span class="line">    <span class="keyword">if</span>(cursor.hasSelection() &amp;&amp; cursor.selectedText() == data)&#123;</span><br><span class="line">        cursor.removeSelectedText();</span><br><span class="line">        cursor.insertText(replaceStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Qt</category>
+      </categories>
+      <tags>
+        <tag>Qt文本替换</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Qt-QTextEdit在文本被编辑时改变窗口图标</title>
     <url>/2019/12/01/2019-12-1-qt-textchanged-changeWindowIcon/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在多文档编辑窗口<code>QMdiArea(ui-&gt;mdiArea)</code>内怎么实现文档被编辑时改变窗口图标以提示文档被编辑</p>
