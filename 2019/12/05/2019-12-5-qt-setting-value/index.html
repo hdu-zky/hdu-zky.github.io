@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="hexo右下角添加2d动画模型">
-<meta name="keywords" content="hexo添加live2dDemo">
+  <meta name="description" content="QSetting的使用">
+<meta name="keywords" content="Qt QSetting">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo右下角添加2d动画模型">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;2019-11-27-add-live2dDemo&#x2F;index.html">
+<meta property="og:title" content="qt中设置Qlabel的背景色及QSetting读取.ini配置文件">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;2019-12-5-qt-setting-value&#x2F;index.html">
 <meta property="og:site_name" content="Hackett">
-<meta property="og:description" content="hexo右下角添加2d动画模型">
+<meta property="og:description" content="QSetting的使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-27T09:29:17.137Z">
+<meta property="og:updated_time" content="2019-12-05T10:41:22.772Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/27/2019-11-27-add-live2dDemo/">
+<link rel="canonical" href="http://yoursite.com/2019/12/05/2019-12-5-qt-setting-value/">
 
 
 <script id="page-configurations">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>hexo右下角添加2d动画模型 | Hackett</title>
+  <title>qt中设置Qlabel的背景色及QSetting读取.ini配置文件 | Hackett</title>
   
 
 
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/27/2019-11-27-add-live2dDemo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/2019-12-5-qt-setting-value/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/user.jpeg">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo右下角添加2d动画模型
+          qt中设置Qlabel的背景色及QSetting读取.ini配置文件
         </h1>
 
         <div class="post-meta">
@@ -231,7 +231,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-27 09:51:55 / 修改时间：17:29:17" itemprop="dateCreated datePublished" datetime="2019-11-27T09:51:55+08:00">2019-11-27</time>
+              <time title="创建时间：2019-12-05 18:29:53 / 修改时间：18:41:22" itemprop="dateCreated datePublished" datetime="2019-12-05T18:29:53+08:00">2019-12-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,8 +239,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Qt/" itemprop="url" rel="index">
+                    <span itemprop="name">Qt</span>
                   </a>
                 </span>
             </span>
@@ -261,8 +261,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/11/27/2019-11-27-add-live2dDemo/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/2019-11-27-add-live2dDemo/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/12/05/2019-12-5-qt-setting-value/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/05/2019-12-5-qt-setting-value/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -277,16 +277,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>hexo右下角添加2d动画模型</p>
+        <p>QSetting的使用</p>
 <a id="more"></a>
-<ol>
-<li>安装插件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure></li>
-<li>选择你喜欢的模型名字<br>在GitHub上<a href="https://github.com/summerscar/live2dDemo" target="_blank" rel="noopener">live2dDemo</a>有很多，可以选择里面的模型</li>
-<li>将以下代码添加到主题配置文件_config.yml末尾，修改&lt;你喜欢的模型名字&gt;（如：z16）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span></span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span></span><br><span class="line">  <span class="built_in">log</span>: <span class="literal">false</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
-<li>建配置文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在站点目录下建文件夹live2d_models，</span><br><span class="line">再在live2d_models下建文件夹&lt;你喜欢的模型名字&gt;,</span><br><span class="line">再在&lt;你喜欢的模型名字&gt;下建json文件：&lt;你喜欢的模型名字&gt;.model.json</span><br></pre></td></tr></table></figure></li>
-<li>安装模型<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br></pre></td></tr></table></figure></li>
-<li>运行以下命令， 在<code>http://localhost:4000/</code>查看测试结果<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></li>
-</ol>
+<p>QLabel背景色的设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">QColor color;</span><br><span class="line"><span class="keyword">if</span>(color.isValid())&#123;</span><br><span class="line">	ui-&gt;lb_textbgcolor-&gt;clear();</span><br><span class="line">	QRgb col = color.rgb();</span><br><span class="line">	QPalette plt;</span><br><span class="line">	plt.setColor(QPalette::Background, QColor(col));</span><br><span class="line">	ui-&gt;lb_textbgcolor-&gt;setAutoFillBackground(<span class="literal">true</span>);  //一定要这句，否则不行</span><br><span class="line">	ui-&gt;lb_textbgcolor-&gt;setPalette(plt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>QRadioButton与QButtonGroup</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setTabPosBtnGroup = new QButtonGroup(this);</span><br><span class="line">setTabPosBtnGroup-&gt;addButton(ui-&gt;rb_north);</span><br><span class="line">setTabPosBtnGroup-&gt;addButton(ui-&gt;rb_south);</span><br><span class="line">setTabPosBtnGroup-&gt;addButton(ui-&gt;rb_east);</span><br><span class="line">setTabPosBtnGroup-&gt;addButton(ui-&gt;rb_west);</span><br><span class="line">connect(setTabPosBtnGroup,SIGNAL(buttonClicked(int)),this,SLOT(setTabPosition(int)));</span><br></pre></td></tr></table></figure>
+<p>声明私有变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">private:</span><br><span class="line">    Ui::Setting *ui;</span><br><span class="line">    QSettings *setting;</span><br><span class="line">    QButtonGroup *setTabPosBtnGroup, *setTabShapeBtnGroup;</span><br><span class="line">    QRgb textColor, currentRowColor, backgroundColor, textBackgroundColor;</span><br><span class="line">    bool isModified;</span><br><span class="line">    void InitRadioButton();</span><br><span class="line">    void readSettings();</span><br><span class="line">    void sendSignal();</span><br><span class="line">    int lang, theme;</span><br><span class="line">    int showMenu,showToolBar, showStatusBar;</span><br><span class="line">    QString newFileName, newFileSuffix;</span><br><span class="line">    int setTabsMovable, setTabsClosable, tabPosition, tabShape;</span><br></pre></td></tr></table></figure>
+<p>读入文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setting = new QSettings(QCoreApplication::applicationDirPath()+<span class="string">"/config.ini"</span>, QSettings::IniFormat); // ini文件</span><br><span class="line">readSetting();</span><br></pre></td></tr></table></figure>
+<p>读取值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">void Setting::<span class="function"><span class="title">readSetting</span></span>()&#123;</span><br><span class="line">    QStringList all = setting-&gt;childGroups();</span><br><span class="line">    // 读取第一组数据</span><br><span class="line">    setting-&gt;beginGroup(all[0]);</span><br><span class="line">    lang = setting-&gt;value(<span class="string">"Language"</span>).toInt();</span><br><span class="line">    showMenu = setting-&gt;value(<span class="string">"ShowMainWindowMenu"</span>).toInt();</span><br><span class="line">    showToolBar = setting-&gt;value(<span class="string">"ShowMainWindowToolBar"</span>).toInt();</span><br><span class="line">    showStatusBar = setting-&gt;value(<span class="string">"ShowMainWindowStatusBar"</span>).toInt();</span><br><span class="line">    theme = setting-&gt;value(<span class="string">"Theme"</span>).toInt();</span><br><span class="line">    setting-&gt;endGroup();</span><br><span class="line">    // 更新选项</span><br><span class="line">    ui-&gt;comboBox_2-&gt;setCurrentIndex(lang);</span><br><span class="line">    ui-&gt;cb_showMainMenu-&gt;setCheckState(Qt::CheckState(showMenu));</span><br><span class="line">    ui-&gt;cb_showToolBar-&gt;setCheckState(Qt::CheckState(showToolBar));</span><br><span class="line">    ui-&gt;cb_showStatusBar-&gt;setCheckState(Qt::CheckState(showStatusBar));</span><br><span class="line">    ui-&gt;cb_theme-&gt;setCurrentIndex(theme);</span><br><span class="line"></span><br><span class="line">    // 读取第二组数据</span><br><span class="line">    setting-&gt;beginGroup(all[1]);</span><br><span class="line">    newFileName = setting-&gt;value(<span class="string">"NewFileName"</span>).toString();</span><br><span class="line">    newFileSuffix = setting-&gt;value(<span class="string">"NewFileSuffix"</span>).toString();</span><br><span class="line">    textColor = setting-&gt;value(<span class="string">"textColor"</span>).toInt();</span><br><span class="line">    currentRowColor = setting-&gt;value(<span class="string">"currentRowColor"</span>).toInt();</span><br><span class="line">    backgroundColor = setting-&gt;value(<span class="string">"backgroundColor"</span>).toInt();</span><br><span class="line">    textBackgroundColor = setting-&gt;value(<span class="string">"textBackgroundColor"</span>).toInt();</span><br><span class="line">    setTabsMovable = setting-&gt;value(<span class="string">"setTabsMovable"</span>).toInt();</span><br><span class="line">    setTabsClosable = setting-&gt;value(<span class="string">"setTabsClosable"</span>).toInt();</span><br><span class="line">    tabPosition = setting-&gt;value(<span class="string">"TabPosition"</span>).toInt();</span><br><span class="line">    tabShape = setting-&gt;value(<span class="string">"TabShape"</span>).toInt();</span><br><span class="line">    setting-&gt;endGroup();</span><br></pre></td></tr></table></figure>
+<p>保存设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">void Setting::on_buttonBox_accepted()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(isModified)&#123;</span><br><span class="line">        setting-&gt;clear();</span><br><span class="line">        setting-&gt;beginGroup(<span class="string">"Environment"</span>);</span><br><span class="line">        setting-&gt;setValue(<span class="string">"Language"</span>, ui-&gt;comboBox_2-&gt;currentIndex());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"ShowMainWindowMenu"</span>, ui-&gt;cb_showMainMenu-&gt;checkState());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"ShowMainWindowToolBar"</span>, ui-&gt;cb_showToolBar-&gt;checkState());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"ShowMainWindowStatusBar"</span>, ui-&gt;cb_showStatusBar-&gt;checkState());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"Theme"</span>, ui-&gt;cb_theme-&gt;currentIndex());</span><br><span class="line">        setting-&gt;endGroup();</span><br><span class="line">        setting-&gt;beginGroup(<span class="string">"textEditor"</span>);</span><br><span class="line">        setting-&gt;setValue(<span class="string">"NewFileName"</span>, ui-&gt;le_newFileName-&gt;text());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"NewFileSuffix"</span>, ui-&gt;le_newFileSuffix-&gt;text());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"textColor"</span>, textColor);</span><br><span class="line">        setting-&gt;setValue(<span class="string">"currentRowColor"</span>, currentRowColor);</span><br><span class="line">        setting-&gt;setValue(<span class="string">"backgroundColor"</span>, backgroundColor);</span><br><span class="line">        setting-&gt;setValue(<span class="string">"textBackgroundColor"</span>, textBackgroundColor);</span><br><span class="line">        setting-&gt;setValue(<span class="string">"setTabsMovable"</span>, ui-&gt;cb_setTabsMovable-&gt;checkState());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"setTabsClosable"</span>, ui-&gt;cb_setTabsClosable-&gt;checkState());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"setTabsMovable"</span>, ui-&gt;cb_setTabsMovable-&gt;checkState());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"TabPosition"</span>, setTabPosBtnGroup-&gt;checkedId());</span><br><span class="line">        setting-&gt;setValue(<span class="string">"TabShape"</span>, setTabShapeBtnGroup-&gt;checkedId());</span><br><span class="line">        setting-&gt;endGroup();</span><br><span class="line">    &#125;</span><br><span class="line">    this-&gt;close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -297,7 +301,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/hexo%E6%B7%BB%E5%8A%A0live2dDemo/" rel="tag"><i class="fa fa-tag"></i> hexo添加live2dDemo</a>
+              <a href="/tags/Qt-QSetting/" rel="tag"><i class="fa fa-tag"></i> Qt QSetting</a>
           </div>
 
         
@@ -306,13 +310,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/11/27/2019-11-27-hexo-no-password/" rel="prev" title="git bash每次运行hexo d都要输入密码的解决办法">
-      <i class="fa fa-chevron-left"></i> git bash每次运行hexo d都要输入密码的解决办法
+    <a href="/2019/12/04/2019-12-4-qt-settings-layout/" rel="prev" title="Qt怎么实现设置窗口的的布局">
+      <i class="fa fa-chevron-left"></i> Qt怎么实现设置窗口的的布局
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/11/27/2019-11-27-add-background-canvas-nest/" rel="next" title="next主题如何添加动态背景canvas_nest">
-      next主题如何添加动态背景canvas_nest <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
