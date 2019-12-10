@@ -46,18 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="如何在程序加载完成之前让用户觉得你的程序不是卡死，从而提高用户体验呢？">
-<meta name="keywords" content="Qt开机动画">
+  <meta name="description" content="如何在文本编辑器中加入c、c++文本编译成可执行程序功能呢">
+<meta name="keywords" content="Qt-compiler">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Qt5.9利用QSplashScreen实现程序启动动画">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;29&#x2F;2019-11-29-qt-add-start-gif&#x2F;index.html">
+<meta property="og:title" content="Qt实现编译本地文件生成运行程序的功能">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;10&#x2F;2019-12-10-add-compiler&#x2F;index.html">
 <meta property="og:site_name" content="Hackett">
-<meta property="og:description" content="如何在程序加载完成之前让用户觉得你的程序不是卡死，从而提高用户体验呢？">
+<meta property="og:description" content="如何在文本编辑器中加入c、c++文本编译成可执行程序功能呢">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-29T11:25:16.915Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;10&#x2F;SeWJhlf5AMwxrOH.png">
+<meta property="og:updated_time" content="2019-12-10T12:40:15.341Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;10&#x2F;SeWJhlf5AMwxrOH.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/29/2019-11-29-qt-add-start-gif/">
+<link rel="canonical" href="http://yoursite.com/2019/12/10/2019-12-10-add-compiler/">
 
 
 <script id="page-configurations">
@@ -71,7 +73,7 @@
   };
 </script>
 
-  <title>Qt5.9利用QSplashScreen实现程序启动动画 | Hackett</title>
+  <title>Qt实现编译本地文件生成运行程序的功能 | Hackett</title>
   
 
 
@@ -207,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/2019-11-29-qt-add-start-gif/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/10/2019-12-10-add-compiler/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/user.jpeg">
@@ -220,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Qt5.9利用QSplashScreen实现程序启动动画
+          Qt实现编译本地文件生成运行程序的功能
         </h1>
 
         <div class="post-meta">
@@ -231,7 +233,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-29 16:27:32 / 修改时间：19:25:16" itemprop="dateCreated datePublished" datetime="2019-11-29T16:27:32+08:00">2019-11-29</time>
+              <time title="创建时间：2019-12-10 20:17:02 / 修改时间：20:40:15" itemprop="dateCreated datePublished" datetime="2019-12-10T20:17:02+08:00">2019-12-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,8 +263,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/11/29/2019-11-29-qt-add-start-gif/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/29/2019-11-29-qt-add-start-gif/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/12/10/2019-12-10-add-compiler/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/10/2019-12-10-add-compiler/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -277,11 +279,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>如何在程序加载完成之前让用户觉得你的程序不是卡死，从而提高用户体验呢？</p>
+        <p>如何在文本编辑器中加入c、c++文本编译成可执行程序功能呢</p>
 <a id="more"></a>
-<h3 id="加载图片并延时-main-cpp"><a href="#加载图片并延时-main-cpp" class="headerlink" title="加载图片并延时(main.cpp)"></a>加载图片并延时(main.cpp)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;QApplication&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QPixmap&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QSplashScreen&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QDateTime&gt;</span></span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">	QApplication a(argc, argv);</span><br><span class="line">	QPixmap pixmap(<span class="string">":/images/hh"</span>); //加载资源文件中的图片</span><br><span class="line">	QSplashScreen splash(pixmap); //利用图片创建一个QSplashScreen对象</span><br><span class="line">	splash.show(); //显示图片</span><br><span class="line">	QDateTime time = QDateTime::currentDateTime();</span><br><span class="line">	QDateTime currentTime = QDateTime::currentDateTime();   //记录当前时间</span><br><span class="line">	<span class="keyword">while</span> (time.secsTo(currentTime) &lt;= 5)                   //5为需要延时的秒数</span><br><span class="line">	&#123;</span><br><span class="line">		currentTime = QDateTime::currentDateTime();	</span><br><span class="line">		a.processEvents();  </span><br><span class="line">	&#125;</span><br><span class="line">	Dialoghome w;</span><br><span class="line">	w.show();</span><br><span class="line">	splash.finish(&amp;w);</span><br><span class="line">	<span class="built_in">return</span> a.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="开机加载GIF动图并延时-main-cpp"><a href="#开机加载GIF动图并延时-main-cpp" class="headerlink" title="开机加载GIF动图并延时(main.cpp)"></a>开机加载GIF动图并延时(main.cpp)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;QApplication&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QMovie&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QPixmap&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QLabel&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QSplashScreen&gt;</span></span><br><span class="line"><span class="comment">#include &lt;QDateTime&gt;                         //添加QDateTime头文件</span></span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">	QApplication a(argc, argv);</span><br><span class="line">	QPixmap pixmap(<span class="string">":/images/bg"</span>); //在动画的底层会显示这张图片</span><br><span class="line">	// 这里很重要,用透明色填充,这样就相当于加了一个透明背景而不是有色彩的背景</span><br><span class="line">	pixmap.fill(Qt::transparent);  //</span><br><span class="line">	QSplashScreen splash(pixmap);  //利用图片创建一个QSplashScreen对象</span><br><span class="line">	QMovie movie(<span class="string">":/images/hh"</span>);   //创建启动需要显示的图片</span><br><span class="line">	QLabel label(&amp;splash);</span><br><span class="line">	label.setMovie(&amp;movie);</span><br><span class="line">	movie.start();  //启动GIF</span><br><span class="line">	splash.show();  //显示图片</span><br><span class="line">	QDateTime time = QDateTime::currentDateTime();</span><br><span class="line">	QDateTime currentTime = QDateTime::currentDateTime();   //记录当前时间</span><br><span class="line">	<span class="keyword">while</span> (time.secsTo(currentTime) &lt;= 5)                   //5为需要延时的秒数</span><br><span class="line">	&#123;</span><br><span class="line">		currentTime = QDateTime::currentDateTime();</span><br><span class="line">		a.processEvents();      //使程序在显示启动画面的同时仍能响应鼠标其他事件</span><br><span class="line">	&#125;;</span><br><span class="line">	MainWindow w;</span><br><span class="line">	w.show();</span><br><span class="line">	splash.finish(&amp;w);  //在主窗体对象初始化完成后,结束启动画面</span><br><span class="line">	<span class="built_in">return</span> a.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参考文章<br>[1]<a href="https://blog.csdn.net/TanChengkai/article/details/100578097" target="_blank" rel="noopener">Qt中通过Qpixmap设置图片透明度</a><br>[2]<a href="https://blog.csdn.net/wangyachao0803/article/details/82839101" target="_blank" rel="noopener">Qt QSplashScreen 开机加载图片和动图</a></p>
+<h4 id="添加系统环境"><a href="#添加系统环境" class="headerlink" title="添加系统环境"></a>添加系统环境</h4><p>要进行c、c++文件的编译需要用到<code>MinGW</code>，查找本地路径<code>(如: D:\Dev-Cpp\MinGW64\bin)</code>并将其添加到系统环境变量<code>Path</code>中。</p>
+<h4 id="声明进程实例-MainWindow-h"><a href="#声明进程实例-MainWindow-h" class="headerlink" title="声明进程实例(MainWindow.h)"></a>声明进程实例(MainWindow.h)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;QProcess&gt;</span></span><br><span class="line">private:</span><br><span class="line">    bool isRunning;</span><br><span class="line">    QProcess process;</span><br></pre></td></tr></table></figure>
+<h4 id="运行进程-MainWindow-cpp"><a href="#运行进程-MainWindow-cpp" class="headerlink" title="运行进程(MainWindow.cpp)"></a>运行进程(MainWindow.cpp)</h4><p>构造函数中将进程相应信号与槽函数对应</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">connect(&amp;process,SIGNAL(finished(int)),this,SLOT(runFinished(int)));</span><br><span class="line">connect(&amp;process,SIGNAL(readyReadStandardOutput()),this,SLOT(updateOutput()));</span><br><span class="line">connect(&amp;process,SIGNAL(readyReadStandardError()),this,SLOT(updateError()));</span><br></pre></td></tr></table></figure>
+<p>通过环境变量中配置的编译器编译源程序文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">void MainWindow::Run(bool)</span><br><span class="line">&#123;</span><br><span class="line">    QString filePath, fileName, absolutePath;</span><br><span class="line">    <span class="keyword">if</span>(isRunning)&#123;</span><br><span class="line">        process.terminate();</span><br><span class="line">        ui-&gt;action_Run-&gt;setIcon(QIcon(<span class="string">":/images/run"</span>));</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(activeEditor())&#123;</span><br><span class="line">        // 检查是否文件已保存</span><br><span class="line">        <span class="keyword">if</span>(activeEditor()-&gt;okToContinue() &amp;&amp; !activeEditor()-&gt;toPlainText().isEmpty())&#123;</span><br><span class="line">            isRunning = <span class="literal">true</span>;</span><br><span class="line">            filePath = activeEditor()-&gt;getCurrentFile();</span><br><span class="line">            fileName = QFileInfo(filePath).baseName();</span><br><span class="line">            absolutePath = QFileInfo(filePath).absolutePath();</span><br><span class="line">            buildPath= absolutePath + tr(<span class="string">"/%1%2"</span>).arg(fileName).arg(<span class="string">".exe"</span>);</span><br><span class="line">            ui-&gt;textEdit-&gt;append(tr(<span class="string">"Starting %1..."</span>).arg(buildPath));</span><br><span class="line">            ui-&gt;textEdit-&gt;append(tr(<span class="string">"g++ %1 -o %2"</span>).arg(filePath).arg(buildPath));</span><br><span class="line">            process.start(<span class="string">"cmd"</span>, QStringList() &lt;&lt; <span class="string">"/c"</span> &lt;&lt;</span><br><span class="line">			QString(tr(<span class="string">"g++ "</span>)+filePath+tr(<span class="string">" -o "</span>)+buildPath));</span><br><span class="line">            process.waitForStarted();</span><br><span class="line">            process.start(buildPath, QStringList()&lt;&lt;<span class="string">"1"</span>);</span><br><span class="line">            ui-&gt;action_Run-&gt;setIcon(QIcon(<span class="string">":/images/stop"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>进程各种状态的处理槽函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void MainWindow::runFinished(int code)&#123;</span><br><span class="line">    ui-&gt;textEdit-&gt;append(tr(<span class="string">"%1 exited with code %2\n"</span>).arg(buildPath).arg(code));</span><br><span class="line">    ui-&gt;action_Run-&gt;setIcon(QIcon(<span class="string">":/images/run"</span>));</span><br><span class="line">    isRunning=<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">void MainWindow::<span class="function"><span class="title">updateOutput</span></span>()&#123;</span><br><span class="line">    QString output=QString::fromLocal8Bit(process.readAllStandardOutput());</span><br><span class="line">    ui-&gt;textEdit-&gt;append(output);</span><br><span class="line">&#125;</span><br><span class="line">void MainWindow::<span class="function"><span class="title">updateError</span></span>()&#123;</span><br><span class="line">    QString error=QString::fromLocal8Bit(process.readAllStandardError());</span><br><span class="line">    ui-&gt;textEdit-&gt;setTextColor(Qt::red);</span><br><span class="line">    ui-&gt;textEdit-&gt;append(error);</span><br><span class="line">    process.terminate();</span><br><span class="line">    isRunning=<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行效果如下图:<br><img src="https://i.loli.net/2019/12/10/SeWJhlf5AMwxrOH.png" alt="run.png"></p>
 
     </div>
 
@@ -292,7 +300,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Qt%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB/" rel="tag"><i class="fa fa-tag"></i> Qt开机动画</a>
+              <a href="/tags/Qt-compiler/" rel="tag"><i class="fa fa-tag"></i> Qt-compiler</a>
           </div>
 
         
@@ -301,13 +309,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/11/28/2019-11-28-hexo-add-wangyiyun-music/" rel="prev" title="Hexo Next主题侧边栏嵌入网易云音乐">
-      <i class="fa fa-chevron-left"></i> Hexo Next主题侧边栏嵌入网易云音乐
+    <a href="/2019/12/07/2019-12-7-qt-getpost-tool/" rel="prev" title="Qt实现类PostMan的get、post请求">
+      <i class="fa fa-chevron-left"></i> Qt实现类PostMan的get、post请求
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/11/29/2019-11-29-qt-multi-language/" rel="next" title="Qt实现中英文切换">
-      Qt实现中英文切换 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -346,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载图片并延时-main-cpp"><span class="nav-number">1.</span> <span class="nav-text">加载图片并延时(main.cpp)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开机加载GIF动图并延时-main-cpp"><span class="nav-number">2.</span> <span class="nav-text">开机加载GIF动图并延时(main.cpp)</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加系统环境"><span class="nav-number">1.</span> <span class="nav-text">添加系统环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明进程实例-MainWindow-h"><span class="nav-number">2.</span> <span class="nav-text">声明进程实例(MainWindow.h)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行进程-MainWindow-cpp"><span class="nav-number">3.</span> <span class="nav-text">运行进程(MainWindow.cpp)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
