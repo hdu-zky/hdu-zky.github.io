@@ -101,31 +101,28 @@
   .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-
-<div id="topbottom">
-      <div><span class="top" title="返回顶部">△</span></div>
-      <div class="blankBox"></div>
-      <div><span class="bottom" title="直达底部">▽</span></div>
-</div>
 <style>
-
 #topbottom {
       width: 40px;
       height: 92px;
-    z-index: 999;
-      bottom: 60px;
+      z-index: 999;
+      bottom: 50%;
       position: fixed;
-    right: 15px;
-    margin-right: 15px;
-    cursor: pointer;
-    transform: translate3d(0,0,0);
+      right: 15px;
+      margin-right: 15px;
+      cursor: pointer;
+      transform: translate3d(0,0,0);
+}
+.backtotopdiv{
+      width: 40px;
+      height: 40px;
+}
+.gettobottomdiv{
+      width: 40px;
+      height: 40px;
 }
 
-.top, .bottom{
+#backtotop, #gettobottom{
       /*margin-top: 6px;*/
       display: inline-block;
       font-size: 40px;
@@ -139,19 +136,38 @@
       border-radius: 50%;
       cursor: pointer;
 }
+#backtotop{
+      display: none;
+}
 .blankBox{
       display: inline-block;
+      width: 40px;
       height: 6px;
 }
-.top:hover {
+#backtotop:hover {
       background-color: #eaeaea;
 }
 
-.bottom:hover {
+#gettobottom:hover {
       background-color: #eaeaea;
 }
 </style>
+</head>
 
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<div id="topbottom">
+      <div class="backtotopdiv">
+            <span id="backtotop" title="返回顶部" >
+                  <svg t="1690112109556" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3994" width="40" height="40"><path d="M896 467.2l-362.666667-341.333333c-2.133333-2.133333-6.4-4.266667-8.533333-6.4-4.266667-2.133333-6.4-2.133333-10.666667-2.133334s-8.533333 0-10.666666 2.133334c-4.266667 2.133333-6.4 4.266667-8.533334 6.4l-362.666666 341.333333c-12.8 12.8-12.8 32-2.133334 44.8 12.8 12.8 32 12.8 44.8 2.133333l309.333334-290.133333V874.666667c0 17.066667 14.933333 32 32 32s32-14.933333 32-32V224L853.333333 514.133333c6.4 6.4 14.933333 8.533333 21.333334 8.533334 8.533333 0 17.066667-4.266667 23.466666-10.666667 12.8-12.8 10.666667-32-2.133333-44.8z" fill="#cccccc" p-id="3995"></path></svg>
+            </span>
+      </div>
+      <div class="blankBox"></div>
+      <div class="gettobottomdiv">
+            <span id="gettobottom" title="直达底部">
+                  <svg t="1690112559085" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4450" width="40" height="40"><path d="M898.133333 512c-12.8-12.8-32-12.8-44.8-2.133333L544 800V149.333333c0-17.066667-14.933333-32-32-32s-32 14.933333-32 32v650.666667L170.666667 509.866667c-12.8-12.8-34.133333-10.666667-44.8 2.133333-12.8 12.8-10.666667 34.133333 2.133333 44.8l362.666667 341.333333c2.133333 2.133333 6.4 4.266667 8.533333 6.4 4.266667 2.133333 6.4 2.133333 10.666667 2.133334s8.533333 0 10.666666-2.133334c4.266667-2.133333 6.4-4.266667 8.533334-6.4l362.666666-341.333333c17.066667-12.8 19.2-32 6.4-44.8z" fill="#cccccc" p-id="4451"></path></svg>
+            </span></div>
+</div>
   <div class="container use-motion">
     <div class="headband"></div>
 
@@ -1330,6 +1346,33 @@
     </footer>
   </div>
 
+
+
+
+<script>
+var goTop=document.getElementById("backtotop");
+document.querySelector("#backtotop").addEventListener("click", backtotopfunc);
+document.querySelector("#gettobottom").addEventListener("click", gettobottomfunc);
+//滚动滚动条触发事件
+window.onscroll=function(){
+      //获取滚动条位置
+      var scrollh= document.documentElement.scrollTop|| document.body.scrollTop;
+      //判断滚动条位置
+      if(scrollh>=300){
+            goTop.style.display="block";   //显示按钮
+      }else{
+            goTop.style.display="none";   //隐藏按钮      
+      }
+}
+function backtotopfunc(){
+  window.scrollTo(0, 0);
+  console.log("backtotopfunc");
+}
+function gettobottomfunc(){
+  window.scrollTo(0, document.documentElement.scrollHeight);
+  console.log("gettobottomfunc");
+}
+</script>
   
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
@@ -1405,6 +1448,7 @@ NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
   <!--  -->
 	<!-- <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script> -->
   <!--  -->
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":180,"height":360},"mobile":{"show":true}});</script></body>
 <!-- 页面点击小红心 -->
 <!-- <script type="text/javascript" src="/js/clicklove.js"></script> -->
