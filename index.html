@@ -105,6 +105,53 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+
+<div id="topbottom">
+      <div><span class="top" title="返回顶部">△</span></div>
+      <div class="blankBox"></div>
+      <div><span class="bottom" title="直达底部">▽</span></div>
+</div>
+<style>
+
+#topbottom {
+      width: 40px;
+      height: 92px;
+    z-index: 999;
+      bottom: 60px;
+      position: fixed;
+    right: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+    transform: translate3d(0,0,0);
+}
+
+.top, .bottom{
+      /*margin-top: 6px;*/
+      display: inline-block;
+      font-size: 40px;
+      line-height: 40px;
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      color: #999999;
+      background-color: white;
+      border: 1px solid #eeeeee;
+      border-radius: 50%;
+      cursor: pointer;
+}
+.blankBox{
+      display: inline-block;
+      height: 6px;
+}
+.top:hover {
+      background-color: #eaeaea;
+}
+
+.bottom:hover {
+      background-color: #eaeaea;
+}
+</style>
+
   <div class="container use-motion">
     <div class="headband"></div>
 
