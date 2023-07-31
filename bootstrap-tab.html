@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 标签页（Tab）插件</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	#myTab {
+		position: fixed; /* 将导航栏设置为固定定位 */
+		top: 0; /* 将导航栏顶端与页面顶端对齐 */
+		left: 0; /* 将导航栏左侧与页面左侧对齐 */
+		width: 100%; /* 将导航栏宽度设为100% */
+		background-color: #fff; /* 设置导航栏背景色为白色 */
+		box-shadow: 0 2px 4px rgba(0,0,0,.1); /* 设置导航栏阴影 */
+		z-index: 999; /* 设置导航栏层级为最高 */
+		overflow: 
+	}
+	 ul {
+		list-style: none;
+		display: flex;
+		overflow-x: scroll;
+		-ms-overflow-style: none; /* IE 10+ */
+		scrollbar-width: none; /* Firefox */
+	}
+	#myTab::-webkit-scrollbar {
+	  /* Chrome, Safari, and Opera */
+	  display: none;
+	}
+
+	#myTab li {
+	  white-space: nowrap;
+	  margin-right: 20px;
+	}
+	#TabContent{
+		margin-top: 42px;
+	}
+	</style>
+</head>
+<body>
+
+<ul id="myTab" class="nav nav-tabs fixed-top">
+	<li class="active">
+		<a href="#home" data-toggle="tab">
+			 菜鸟教程
+		</a>
+	</li>
+	<li><a href="#ios" class="nav-item nav-link" data-toggle="tab">iOS</a></li>
+	<li><a href="#jmeter" class="nav-item nav-link"  data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb" class="nav-item nav-link"  data-toggle="tab">ejb</a></li>
+	<li><a href="#ejb1" class="nav-item nav-link"  data-toggle="tab">ejb1</a></li>
+	<li><a href="#ejb2" class="nav-item nav-link"  data-toggle="tab">ejb</a></li>
+	<li><a href="#ejb3" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb4" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb5" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb6" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb7" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb1" data-toggle="tab">ejb1</a></li>
+	<li><a href="#ejb2" data-toggle="tab">ejb</a></li>
+	<li><a href="#ejb3" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb4" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb5" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb6" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb7" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb1" data-toggle="tab">ejb1</a></li>
+	<li><a href="#ejb2" data-toggle="tab">ejb</a></li>
+	<li><a href="#ejb3" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb4" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb5" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb6" data-toggle="tab">iOS</a></li>
+	<li><a href="#ejb7" data-toggle="tab">iOS</a></li>
+</ul>
+<button data-toggle="collapse" data-target=".navbox">展示/收起</button>
+<div id="TabContent" class="tab-content" height="3999px">
+	<div class="tab-pane fade in active" id="home">
+		<p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+		<p style="color: #009F95">我是嵌入的HTML上面的标签</p>
+		<iframe src="./pages/1.html" frameBorder="0" width="100%" scrolling="auto" height="3900px"></iframe>
+		<p style="color: #009F95">我是嵌入的HTML下面的标签</p>	
+	</div>
+	<div class="tab-pane fade" id="ios">
+		<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+			TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+		<iframe src="./pages/2.html" frameBorder="0" width="100%" scrolling="auto" height="3900px"></iframe>
+	</div>
+	<div class="tab-pane fade" id="jmeter">
+		<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+		<iframe src="./pages/3.html" frameBorder="0" width="100%" scrolling="auto" height="3900px"></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb1">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb2">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb3">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb4">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb5">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb6">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+	<div class="tab-pane fade" id="ejb7">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	</div>
+</div>
+<div id="goTopBottom" style="opacity: 1; position: fixed; width: 40px; height: 86px; padding: 0px; bottom: 50%; right: 6px; margin: 0px; visibility: visible;">
+	<div class="backToTopDiv" style="width: 40px; height: 40px;">
+		<span id="backToTop" title="返回顶部" style="display: inline-block;		font-size: 40px;		line-height: 40px;		text-align: center;		width: 40px;		height: 40px;		color: #eeeeee;		background-color: transparent;		//border: 1px solid #eeeeee;		border-radius: 50%;		cursor: pointer;">
+			<svg t="1690112109556" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3994" width="40" height="40"><path d="M896 467.2l-362.666667-341.333333c-2.133333-2.133333-6.4-4.266667-8.533333-6.4-4.266667-2.133333-6.4-2.133333-10.666667-2.133334s-8.533333 0-10.666666 2.133334c-4.266667 2.133333-6.4 4.266667-8.533334 6.4l-362.666666 341.333333c-12.8 12.8-12.8 32-2.133334 44.8 12.8 12.8 32 12.8 44.8 2.133333l309.333334-290.133333V874.666667c0 17.066667 14.933333 32 32 32s32-14.933333 32-32V224L853.333333 514.133333c6.4 6.4 14.933333 8.533333 21.333334 8.533334 8.533333 0 17.066667-4.266667 23.466666-10.666667 12.8-12.8 10.666667-32-2.133333-44.8z" fill="#cccccc" p-id="3995"></path></svg>
+		</span>
+	</div>
+	<div class="goToBottomDiv" style="width: 40px;height: 40px; margin-top: 6px;">
+		<span id="goToBottom" title="直达底部" style="display: inline-block;		font-size: 40px;		line-height: 40px;		text-align: center;		width: 40px;		height: 40px;		color: #eeeeee;		background-color: transparent;		//border: 1px solid #eeeeee;		border-radius: 50%;		cursor: pointer;">
+			<svg t="1690112559085" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4450" width="40" height="40"><path d="M898.133333 512c-12.8-12.8-32-12.8-44.8-2.133333L544 800V149.333333c0-17.066667-14.933333-32-32-32s-32 14.933333-32 32v650.666667L170.666667 509.866667c-12.8-12.8-34.133333-10.666667-44.8 2.133333-12.8 12.8-10.666667 34.133333 2.133333 44.8l362.666667 341.333333c2.133333 2.133333 6.4 4.266667 8.533333 6.4 4.266667 2.133333 6.4 2.133333 10.666667 2.133334s8.533333 0 10.666666-2.133334c4.266667-2.133333 6.4-4.266667 8.533334-6.4l362.666666-341.333333c17.066667-12.8 19.2-32 6.4-44.8z" fill="#cccccc" p-id="4451"></path></svg>
+		</span>
+	</div>
+</div>
+<script>
+//回到顶部函数
+const onClickBackToTop=()=>{
+	var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+	if (currentScroll > 0) {
+		/*document.body.scrollIntoView({
+			behavior: "smooth",
+			block:"start"
+		});*/
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	}
+}
+//直达底部
+const onClickGoBottom=()=>{
+	var height = document.documentElement.scrollHeight;
+	/*var intervalBottom = setInterval(function(){
+		window.scrollBy(0, +250);
+		if (window.pageYOffset == height) {
+			clearInterval(intervalBottom);
+		}
+	}, 100);*/
+	window.scrollTo({
+		top: document.documentElement.scrollHeight,
+		behavior: "smooth",
+	});
+	/*window.scrollTo(0, document.documentElement.scrollHeight);*/
+}
+backToTopBtn = document.getElementById('backToTop');
+goToBottomBtn = document.getElementById('goToBottom');
+//添加点击事件监控
+backToTopBtn.addEventListener('click', onClickBackToTop);
+goToBottomBtn.addEventListener('click', onClickGoBottom);
+
+backToTopBtn.addEventListener('mouseover', function(){
+	var topBtn = document.getElementById('backToTop');
+	topBtn.style.backgroundColor= "#eaeaea";
+});
+backToTopBtn.addEventListener('mouseout', function(){
+	var topBtn = document.getElementById('backToTop');
+	topBtn.style.backgroundColor= "transparent";
+});
+goToBottomBtn.addEventListener('mouseover',  function(){
+	var bottomBtn = document.getElementById('goToBottom');
+	bottomBtn.style.backgroundColor= "#eaeaea";
+});
+goToBottomBtn.addEventListener('mouseout',  function(){
+	var bottomBtn = document.getElementById('goToBottom');
+	bottomBtn.style.backgroundColor= "transparent";
+});
+
+window.onscroll = function (e) {
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    var backTop = document.getElementById('backToTop');
+    if (backTop && currentScroll > 100) {
+        backTop.style.display = "block";
+    } else {
+		if(backTop)
+			backTop.style.display = "none";
+    }
+}
+
+</script>
+</body>
+</html>
