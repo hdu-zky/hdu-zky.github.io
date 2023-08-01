@@ -4,11 +4,17 @@
 	<meta charset="utf-8"> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Bootstrap 实例 - 标签页（Tab）插件</title>
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<title>手机滑屏tab菜单</title>
 	<style>
+	.slider-container {
+	  overflow-x: scroll;
+	}
+	.slider {
+	  display: flex;
+	}
 	#myTab {
 		position: fixed; /* 将导航栏设置为固定定位 */
 		top: 0; /* 将导航栏顶端与页面顶端对齐 */
@@ -34,15 +40,20 @@
 	#myTab li {
 	  white-space: nowrap;
 	  margin-right: 20px;
+		flex: 1 0 auto;
 	}
 	#TabContent{
-		margin-top: 42px;
+		margin-top: 60px;
 	}
 	</style>
 </head>
-<body>
+<script type ="text/javascript" >
 
-<ul id="myTab" class="nav nav-tabs fixed-top">
+</script>
+<body>
+<div class="">
+  <div class="slider-container">
+<ul id="myTab" class="nav nav-tabs fixed-top slider">
 	<li class="active">
 		<a href="#home" data-toggle="tab">
 			 菜鸟教程
@@ -73,65 +84,37 @@
 	<li><a href="#ejb6" data-toggle="tab">iOS</a></li>
 	<li><a href="#ejb7" data-toggle="tab">iOS</a></li>
 </ul>
+</div>
+</div>
 <button data-toggle="collapse" data-target=".navbox">展示/收起</button>
-<div id="TabContent" class="tab-content container" height="3999px">
-	<div class="tab-pane fade in active" id="home">
-		<p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
-		<p style="color: #009F95">我是嵌入的HTML上面的标签</p>
-		<iframe src="./pages/1.html" frameBorder="0" width="100%" scrolling="auto" height="3900px"></iframe>
-		<p style="color: #009F95">我是嵌入的HTML下面的标签</p>	
+<div id="TabContent" class="tab-content" height="auto !important">
+	<div class="tab-pane fade in active" id="home" height="auto !important">
+	<!--height="3900px"-->
+		<iframe src="./pages/1.html"
+		frameBorder="0" width="100%" height="6000px !important" scrolling="no" ></iframe>
 	</div>
-	<div class="tab-pane fade" id="ios">
-		<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
-			TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-		<iframe src="./pages/2.html" frameBorder="0" width="100%" scrolling="auto" height="3900px"></iframe>
+	<div class="tab-pane fade" id="2048" height="auto !important">
+		<iframe src="https://bbs.tsn9.com/2048/"
+		frameBorder="0" width="100%" scrolling="no"></iframe>
 	</div>
-	<div class="tab-pane fade" id="jmeter">
-		<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
-		<iframe src="./pages/3.html" frameBorder="0" width="100%" scrolling="auto" height="3900px"></iframe>
+	<div class="tab-pane fade" id="cilisou" height="auto !important">
+		<iframe id="cls_frame" src="https://cls060.buzz/search-%E6%AF%8D%E5%AD%90-0-0-1.html"
+		frameBorder="0" width="100%" scrolling="no"></iframe>
 	</div>
-	<div class="tab-pane fade" id="ejb">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	<div class="tab-pane fade" id="ejb" height="auto !important">
+		<iframe id="xyz_frame" src="https://691040.xyz/main-search-kw-%E6%AF%8D%E5%AD%90-1.html"
+		frameBorder="0" width="100%"
+		scrolling="no"  height="6000px !important" οnlοad="reinitIframeChrome(this, 'xyz_frame')"></iframe>
 	</div>
-	<div class="tab-pane fade" id="ejb1">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
-	</div>
-	<div class="tab-pane fade" id="ejb2">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
-	</div>
-	<div class="tab-pane fade" id="ejb3">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
-	</div>
-	<div class="tab-pane fade" id="ejb4">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
-	</div>
-	<div class="tab-pane fade" id="ejb5">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
-	</div>
-	<div class="tab-pane fade" id="ejb6">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
-	</div>
-	<div class="tab-pane fade" id="ejb7">
-		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-		</p>
-		<iframe src="./pages/4.html" frameBorder="0" width="100%" scrolling="auto" height="3900px" box-sizing: border-box;></iframe>
+	<div class="tab-pane fade" id="ejb1" height="auto !important">
+		<iframe id="xyzz_frame" src="https://691040.xyz/main-search-kw-%E6%AF%8D%E5%AD%90-1.html"
+		frameBorder="0" width="100%" scrolling="no" height="6000px !important"></iframe>
 	</div>
 </div>
-<div id="goTopBottom" style="opacity: 1; position: fixed; width: 40px; height: 86px; padding: 0px; bottom: 50%; right: 6px; margin: 0px; visibility: visible;">
+<div class="search" id="searchBtn" style="link width: 32px; height: 32px; left:6px; bottom: 60px; position: fixed; cursor: pointer;">
+	<svg t="1690866638624" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3408" width="32" height="32"><path d="M945.066667 898.133333l-189.866667-189.866666c55.466667-64 87.466667-149.333333 87.466667-241.066667 0-204.8-168.533333-373.333333-373.333334-373.333333S96 264.533333 96 469.333333 264.533333 842.666667 469.333333 842.666667c91.733333 0 174.933333-34.133333 241.066667-87.466667l189.866667 189.866667c6.4 6.4 14.933333 8.533333 23.466666 8.533333s17.066667-2.133333 23.466667-8.533333c8.533333-12.8 8.533333-34.133333-2.133333-46.933334zM469.333333 778.666667C298.666667 778.666667 160 640 160 469.333333S298.666667 160 469.333333 160 778.666667 298.666667 778.666667 469.333333 640 778.666667 469.333333 778.666667z" fill="#1296db" p-id="3409"></path></svg>
+</div>
+<div id="goTopBottom" style="opacity: 1; position: fixed; width: 40px; height: 86px; padding: 0px; bottom: 60px; right: 6px; margin: 0px; visibility: visible;">
 	<div class="backToTopDiv" style="width: 40px; height: 40px;">
 		<span id="backToTop" title="返回顶部" style="display: inline-block;		font-size: 40px;		line-height: 40px;		text-align: center;		width: 40px;		height: 40px;		color: #eeeeee;		background-color: transparent;		//border: 1px solid #eeeeee;		border-radius: 50%;		cursor: pointer;">
 			<svg t="1690112109556" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3994" width="40" height="40"><path d="M896 467.2l-362.666667-341.333333c-2.133333-2.133333-6.4-4.266667-8.533333-6.4-4.266667-2.133333-6.4-2.133333-10.666667-2.133334s-8.533333 0-10.666666 2.133334c-4.266667 2.133333-6.4 4.266667-8.533334 6.4l-362.666666 341.333333c-12.8 12.8-12.8 32-2.133334 44.8 12.8 12.8 32 12.8 44.8 2.133333l309.333334-290.133333V874.666667c0 17.066667 14.933333 32 32 32s32-14.933333 32-32V224L853.333333 514.133333c6.4 6.4 14.933333 8.533333 21.333334 8.533334 8.533333 0 17.066667-4.266667 23.466666-10.666667 12.8-12.8 10.666667-32-2.133333-44.8z" fill="#cccccc" p-id="3995"></path></svg>
@@ -144,6 +127,40 @@
 	</div>
 </div>
 <script>
+//顶部导航栏鼠标按住左右滑动
+const slider = document.querySelector('.slider');
+let isDown = false;
+let startX;
+let scrollLeft;
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+});
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = x - startX;
+  slider.scrollLeft = scrollLeft - walk;
+});
+//搜索按钮
+$('#searchBtn').on('click', function(){
+	var keyword = prompt("请输入您想要查找的：", "");
+	if(keyword === "") return false;
+	var kword = encodeURI(keyword);
+	alert(keyword, kword);
+	
+    $('#xyz_frame').prop( 'src' , "https://691040.xyz/main-search-kw-"+ kword +"-1.html");
+	$('#cls_frame').prop('src', "https://cls060.buzz/search-"+ kword +"-0-0-1.html");
+})
+
 //回到顶部函数
 const onClickBackToTop=()=>{
 	var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
